@@ -9,20 +9,32 @@
       I can either join your team physically if you’re located in Paris, or work remotely.
     </p>
     <div class="competences-ctn">
-      <div>
-        <img src="../../assets/pixel-perfect-code.png" alt="pixel-perfect-code img">
+      <div @mouseenter="toggleHoveredImage('pixel-perfect')"
+           @mouseleave="toggleHoveredImage('pixel-perfect')">
+        <img v-if="!hovered['pixel-perfect']" src="../../assets/pixel-perfect-code.png"
+             alt="pixel-perfect-code img">
+        <img v-else src="../../assets/pixel-perfect-code-h.png" alt="pixel-perfect-code img">
         <p>Pixel perfect code</p>
       </div>
-      <div>
-        <img src="../../assets/responsive-design.png" alt="responsive-design-img">
+      <div @mouseenter="toggleHoveredImage('responsive')"
+           @mouseleave="toggleHoveredImage('responsive')">
+        <img v-if="!hovered.responsive" src="../../assets/responsive-design.png"
+             alt="responsive-design-img">
+        <img v-else src="../../assets/responsive-design-h.png" alt="responsive-design-img">
         <p>Responsive design</p>
       </div>
-      <div>
-        <img src="../../assets/performance-oriented.png" alt="performance-oriented img">
+      <div @mouseenter="toggleHoveredImage('performance')"
+           @mouseleave="toggleHoveredImage('performance')">
+        <img v-if="!hovered.performance" src="../../assets/performance-oriented.png"
+             alt="performance-oriented img">
+        <img v-else src="../../assets/performance-oriented-h.png" alt="performance-oriented img">
         <p>Performance oriented</p>
       </div>
-      <div>
-        <img src="../../assets/ux-driven-development.png" alt="ux-driven-development img">
+      <div @mouseenter="toggleHoveredImage('ux')"
+           @mouseleave="toggleHoveredImage('ux')">
+        <img v-if="!hovered.ux" src="../../assets/ux-driven-development.png"
+             alt="ux-driven-development img">
+        <img v-else src="../../assets/ux-driven-development-h.png" alt="ux-driven-development img">
         <p>UX driven development</p>
       </div>
     </div>
@@ -32,6 +44,21 @@
 <script>
 export default {
   name: 'Landing',
+  data() {
+    return {
+      hovered: {
+        'pixel-perfect': false,
+        responsive: false,
+        performance: false,
+        ux: false,
+      },
+    };
+  },
+  methods: {
+    toggleHoveredImage(item) {
+      this.hovered[item] = !this.hovered[item];
+    },
+  },
 };
 </script>
 
