@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Technical skills</h2>
+    <h2 class="section-title text-custom-white">Technical skills</h2>
     <div id="skills-ctn">
       <skill-item v-for="skill in skills" :key="skill.name"
                   :name="skill.name" :description="skill.description">
@@ -43,8 +43,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 section {
-  background: #2E2B2B;
+  background: theme('colors.custom-black');
 }
 </style>

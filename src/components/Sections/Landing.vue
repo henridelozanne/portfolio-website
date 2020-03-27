@@ -35,13 +35,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 section {
-  background: #2E2B2B;
+  background: theme('colors.custom-black');
 }
 
 .presentation-header {
   margin: 0;
+  color: theme('colors.primary');
+}
+
+.presentation-detail {
+  color: theme('colors.custom-white');
 }
 
 .competences-ctn {
@@ -49,8 +54,14 @@ section {
   margin: auto;
 }
 
-.competences-ctn div img {
-  width: 150px;
-  height: 150px;
+.competences-ctn div {
+  p {
+    color: theme('colors.custom-white');
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
 }
 </style>

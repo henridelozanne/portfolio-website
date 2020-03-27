@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 body {
   margin: 0;
 }
@@ -36,5 +36,8 @@ body {
 
 .website-section {
   height: 100vh;
+}
+
+.section-title {
 }
 </style>

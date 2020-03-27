@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Projects</h2>
+    <h2 class="section-title text-custom-black">Projects</h2>
   </section>
 </template>
 
@@ -10,6 +10,8 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped lang="scss">
+section {
+  background: theme('colors.custom-grey');
+}
 </style>

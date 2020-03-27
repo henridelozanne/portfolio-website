@@ -15,6 +15,8 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss">
+.skill-ctn {
+  color: theme('colors.custom-white');
+}
 </style>
