@@ -4,7 +4,7 @@
     <projects-section class="website-section"></projects-section>
     <skills-section class="website-section"></skills-section>
     <contact-section class="website-section"></contact-section>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
   </div>
 </template>
 
@@ -35,7 +35,7 @@ body {
 }
 
 .website-section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .section-title {

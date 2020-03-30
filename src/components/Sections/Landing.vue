@@ -1,40 +1,51 @@
 <template>
   <section>
-    <h1 class="presentation-header">
-      Hi. I’m Henri, a front-end developer from Paris. Please take a look around!
-    </h1>
-    <p class="presentation-detail">
-      I am passionate about building websites that improve the lives of those around me.
-      I work as a freelancer for companies from any industry.
-      I can either join your team physically if you’re located in Paris, or work remotely.
-    </p>
+    <div class="presentation-ctn">
+      <h1 class="presentation-header">
+        Hi. I’m Henri, a front-end developer from Paris. Please take a look around!
+      </h1>
+      <div class="presentation-detail">
+        I am passionate about building websites that improve the lives of those around me.
+        I work as a freelancer for companies from any industry.
+        I can either join your team physically if you’re located in Paris, or work remotely.
+      </div>
+    </div>
     <div class="competences-ctn">
       <div @mouseenter="toggleHoveredImage('pixel-perfect')"
            @mouseleave="toggleHoveredImage('pixel-perfect')">
-        <img v-if="!hovered['pixel-perfect']" src="../../assets/pixel-perfect-code.png"
-             alt="pixel-perfect-code img">
-        <img v-else src="../../assets/pixel-perfect-code-h.png" alt="pixel-perfect-code img">
+        <div class="img-ctn">
+          <img v-if="!hovered['pixel-perfect']" src="../../assets/pixel-perfect-code.png"
+                alt="pixel-perfect-code img">
+          <img v-else src="../../assets/pixel-perfect-code-h.png" alt="pixel-perfect-code img">
+        </div>
         <p>Pixel perfect code</p>
       </div>
       <div @mouseenter="toggleHoveredImage('responsive')"
            @mouseleave="toggleHoveredImage('responsive')">
-        <img v-if="!hovered.responsive" src="../../assets/responsive-design.png"
+        <div class="img-ctn">
+          <img v-if="!hovered.responsive" src="../../assets/responsive-design.png"
              alt="responsive-design-img">
-        <img v-else src="../../assets/responsive-design-h.png" alt="responsive-design-img">
+          <img v-else src="../../assets/responsive-design-h.png" alt="responsive-design-img">
+        </div>
         <p>Responsive design</p>
       </div>
       <div @mouseenter="toggleHoveredImage('performance')"
            @mouseleave="toggleHoveredImage('performance')">
-        <img v-if="!hovered.performance" src="../../assets/performance-oriented.png"
+        <div class="img-ctn">
+          <img v-if="!hovered.performance" src="../../assets/performance-oriented.png"
              alt="performance-oriented img">
-        <img v-else src="../../assets/performance-oriented-h.png" alt="performance-oriented img">
+          <img v-else src="../../assets/performance-oriented-h.png" alt="performance-oriented img">
+        </div>
         <p>Performance oriented</p>
       </div>
       <div @mouseenter="toggleHoveredImage('ux')"
            @mouseleave="toggleHoveredImage('ux')">
-        <img v-if="!hovered.ux" src="../../assets/ux-driven-development.png"
+        <div class="img-ctn">
+          <img v-if="!hovered.ux" src="../../assets/ux-driven-development.png"
              alt="ux-driven-development img">
-        <img v-else src="../../assets/ux-driven-development-h.png" alt="ux-driven-development img">
+          <img v-else src="../../assets/ux-driven-development-h.png"
+               alt="ux-driven-development img">
+        </div>
         <p>UX driven development</p>
       </div>
     </div>
@@ -65,30 +76,58 @@ export default {
 <style scoped lang="scss">
 section {
   background: theme('colors.custom-black');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 20px;
 }
 
-.presentation-header {
-  margin: 0;
-  color: theme('colors.primary');
-}
+.presentation-ctn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.presentation-detail {
-  color: theme('colors.custom-white');
+  .presentation-header {
+    width: 520px;
+    margin: 0;
+    color: theme('colors.primary');
+    font-weight: bold;
+    font-size: 48px;
+    text-align: right;
+    margin-right: 50px;
+  }
+
+  .presentation-detail {
+    color: theme('colors.custom-white');
+    width: 570px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.7em;
+  }
 }
 
 .competences-ctn {
   display: flex;
-  margin: auto;
-}
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 930px;
 
-.competences-ctn div {
-  p {
-    color: theme('colors.custom-white');
-  }
+  div {
+    .img-ctn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  img {
-    width: 150px;
-    height: 150px;
+      img {
+        height: 115px;
+      }
+    }
+
+    p {
+      color: theme('colors.custom-white');
+      margin-top: 15px;
+    }
   }
 }
 </style>
