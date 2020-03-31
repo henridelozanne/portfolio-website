@@ -35,10 +35,7 @@ body {
 }
 
 .website-section {
-  min-height: 100vh;
+  height: 100vh;
   padding: 1em;
-}
-
-.section-title {
 }
 </style>
