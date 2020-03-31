@@ -1,6 +1,7 @@
 <template>
   <section>
-    <h2 class="text-custom-black">Let's get in touch</h2>
+    <section-title :title="'Let\'s get in touch'" :lightBackground="true"></section-title>
+
     <form action="">
       <input placeholder="name" type="text">
       <input placeholder="email" type="text">
@@ -12,8 +13,13 @@
 </template>
 
 <script>
+import SectionTitle from '../SectionTitle.vue';
+
 export default {
   name: 'Contact',
+  components: {
+    'section-title': SectionTitle,
+  },
 };
 </script>
 

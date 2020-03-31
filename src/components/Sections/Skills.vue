@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="section-title text-custom-white">Technical skills</h2>
+    <section-title :title="'Technical skills'" :lightBackground="false"></section-title>
     <div id="skills-ctn">
       <skill-item v-for="skill in skills" :key="skill.name"
                   :name="skill.name" :description="skill.description">
@@ -11,11 +11,13 @@
 
 <script>
 import SkillItem from '../SkillItem.vue';
+import SectionTitle from '../SectionTitle.vue';
 
 export default {
   name: 'Skills',
   components: {
     'skill-item': SkillItem,
+    'section-title': SectionTitle,
   },
   data() {
     return {

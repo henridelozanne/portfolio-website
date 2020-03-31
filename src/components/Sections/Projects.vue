@@ -1,12 +1,17 @@
 <template>
   <section>
-    <h2 class="section-title text-custom-black">Projects</h2>
+    <section-title :title="'Projects'" :lightBackground="true"></section-title>
   </section>
 </template>
 
 <script>
+import SectionTitle from '../SectionTitle.vue';
+
 export default {
   name: 'Projects',
+  components: {
+    'section-title': SectionTitle,
+  },
 };
 </script>
 
