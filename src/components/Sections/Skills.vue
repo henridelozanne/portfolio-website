@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SkillItem from '../Skills/SkillItem.vue';
+import SkillItem from '../SkillItem.vue';
 
 export default {
   name: 'Skills',
