@@ -3,18 +3,7 @@
        @mouseenter="toggleHoveredProject"
        @mouseleave="toggleHoveredProject">
       <div class="img-ctn">
-        <img v-if="project.name === 'L\'Artisan du deux-roues'"
-            class="project-thumb" src="../assets/projects/lartisan-du-deux-roues.png"
-            alt="lartisan-du-deux-roues">
-        <img v-else-if="project.name === 'Izifret'"
-            class="project-thumb" src="../assets/projects/izifret.png"
-            alt="izifret">
-        <img v-else-if="project.name === 'Charles Michel Photography'"
-            class="project-thumb" src="../assets/projects/charles-michel-photography/main.png"
-            alt="charles-michel-photography">
-        <img v-else-if="project.name === 'Space Tetris'"
-            class="project-thumb" src="../assets/projects/space-tetris.png"
-            alt="space-tetris">
+        <img :src="mainImageSrc" :alt="mainImageAlt" class="project-thumb">
         <div class="hovered-project" v-if="hoveredProject">
             <span @click="toggleVisibleDetail">See more details</span>
         </div>
@@ -34,6 +23,14 @@ export default {
   },
   components: {
     'project-detail': ProjectDetail,
+  },
+  computed: {
+    mainImageAlt() {
+      return this.project.images.filter((img) => img.main)[0].alt;
+    },
+    mainImageSrc() {
+      return this.project.images.filter((img) => img.main)[0].src;
+    },
   },
   data() {
     return {

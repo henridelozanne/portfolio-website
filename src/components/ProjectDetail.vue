@@ -4,16 +4,17 @@
           <div class="images-ctn">
             <div class="main-img-ctn">
               <div class="main-img-inner-ctn">
-                <div class="fake-main-img shadow"></div>
+                <img class="main-img shadow" :src="mainImage.src" :alt="mainImage.alt">
               </div>
             </div>
-            <div class="small-images-outer-ctn">
-              <div class="small-images-ctn">
-                <div class="fake-small-img"></div>
-                <div class="fake-small-img"></div>
-                <div class="fake-small-img"></div>
+            <div class="small-images-ctn">
+                <img v-for="(smallImage, i) in smallImages"
+                     :key="smallImage.src"
+                     :src="smallImage.src"
+                     :alt="smallImage.alt"
+                     @click="setNewMainImage(smallImage, i)"
+                     class="small-img">
               </div>
-            </div>
           </div>
           <div class="description-ctn">
             <h2>
@@ -85,6 +86,27 @@ export default {
   props: {
     project: { type: Object },
   },
+  mounted() {
+    this.mainImage.src = this.project.images.filter((img) => img.main)[0].src;
+    this.mainImage.alt = this.project.images.filter((img) => img.main)[0].alt;
+    this.smallImages = this.project.images.filter((img) => !img.main);
+  },
+  data() {
+    return {
+      mainImage: {
+        src: undefined,
+        alt: undefined,
+      },
+      smallImages: [],
+    };
+  },
+  methods: {
+    setNewMainImage(payload, i) {
+      this.mainImage.src = payload.src;
+      this.mainImage.alt = payload.alt;
+      this.smallImages.splice(i, 1, this.mainImage);
+    },
+  },
 };
 </script>
 
@@ -92,11 +114,11 @@ export default {
 .modal {
     height: 100vh;
     width: 100vw;
-    background: rgba(0,0,0,.6);
+    background: rgba(0,0,0,.75);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,37 +129,32 @@ export default {
         display: flex;
         background: theme('colors.custom-black');
         margin: 0 300px;
+        border-radius: 4px;
 
         .images-ctn {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          padding: 10px;
+          justify-content: space-around;
+          border: 10px solid theme('colors.custom-black');
+          background: white;
+          border-radius: 4px;
 
           .main-img-ctn {
-            background: white;
             padding: 50px 20px;
-
             .main-img-inner-ctn {
               height: 100%;
-              display: flex;
-              align-items: center;
-            }
-
-            .fake-main-img {
               width: 700px;
-              height: 350px;
-              background: teal;
+              display: flex;
+              justify-content: center;
+
+              .main-img {
+                max-height: 350px;
+                box-shadow: 2px 4px 10px rgba(0,0,0,.4);
+              }
             }
           }
 
-          .small-images-outer-ctn {
-            background: white;
-            height: 100%;
-            display: flex;
-            align-items: center;
-
-            .small-images-ctn {
+          .small-images-ctn {
               display: flex;
               justify-content: space-around;
               background: #FDF6F6;;
@@ -146,16 +163,16 @@ export default {
               border-top: 1px solid black;
               border-bottom: 1px solid black;
 
-              .fake-small-img {
-                width: 130px;
+              .small-img {
                 height: 100px;
-                background: teal;
+                box-shadow: 2px 4px 10px rgba(0,0,0,.4);
+                cursor: pointer;
               }
             }
-          }
         }
 
         .description-ctn {
+          min-width: 392px;
           text-align: center;
           padding: 30px 20px;
           display: flex;

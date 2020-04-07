@@ -33,6 +33,25 @@ export default {
             display: 'www.lartisandudeuxroues.com',
             href: 'https//:lartisandudeuxroues.com',
           },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274088/portfolio-website/projects/lartisan-du-deux-roues/main.png',
+              alt: 'lartisan-du-deux-roues-main-img',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274088/portfolio-website/projects/lartisan-du-deux-roues/formules.png',
+              alt: 'lartisan-du-deux-roues-prices-img',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274088/portfolio-website/projects/lartisan-du-deux-roues/ou%CC%80-nous-trouver.png',
+              alt: 'lartisan-du-deux-roues-localization-img',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274088/portfolio-website/projects/lartisan-du-deux-roues/e%CC%81quipe.png',
+              alt: 'lartisan-du-deux-roues-team-img',
+            },
+          ],
         },
         {
           name: 'Izifret',
@@ -43,6 +62,25 @@ export default {
             display: 'www.izifret.com',
             href: 'https//:izifret.com',
           },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274125/portfolio-website/projects/izifret/main.png',
+              alt: 'izifret-main-img',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274124/portfolio-website/projects/izifret/dashboard.png',
+              alt: 'izifret-dashboard-img',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274124/portfolio-website/projects/izifret/regular-routes.png',
+              alt: 'izifret-regular-routes-img',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274124/portfolio-website/projects/izifret/shipments.png',
+              alt: 'izifret-shipments-img',
+            },
+          ],
         },
         {
           name: 'Charles Michel Photography',
@@ -53,6 +91,25 @@ export default {
             display: 'www.charlesmichel-photography.com',
             href: 'https//:charlesmichel-photography.com',
           },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586272887/portfolio-website/projects/charles-michel-photography/main.png',
+              alt: 'charles-michel-photography-main-img',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586272886/portfolio-website/projects/charles-michel-photography/desktop-about-me.png',
+              alt: 'charles-michel-photography-about-me-img',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586272886/portfolio-website/projects/charles-michel-photography/desktop-contact.png',
+              alt: 'charles-michel-photography-contact-img',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586272886/portfolio-website/projects/charles-michel-photography/mobile-home-page.png',
+              alt: 'charles-michel-photography-mobile-img',
+            },
+          ],
         },
         {
           name: 'Space Tetris',
@@ -62,6 +119,17 @@ export default {
             display: 'www.space-tetris.com',
             href: 'https//:space-tetris.netlify.com',
           },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274161/portfolio-website/projects/space-tetris/main.png',
+              alt: 'space-tetris-main-img',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274160/portfolio-website/projects/space-tetris/commands.png',
+              alt: 'space-tetris-commands-img',
+            },
+          ],
         },
       ],
     };
