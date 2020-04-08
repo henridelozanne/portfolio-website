@@ -1,5 +1,5 @@
 <template>
-  <div class="modal">
+  <div class="modal" @click="closeModal">
       <div class="modal-content">
           <div class="images-ctn">
             <div class="main-img-ctn">
@@ -101,6 +101,11 @@ export default {
     };
   },
   methods: {
+    closeModal(clickEvent) {
+      if (clickEvent.target.className === 'modal') {
+        this.$emit('closeDetail');
+      }
+    },
     setNewMainImage(payload) {
       this.mainImage = payload;
     },

@@ -9,7 +9,9 @@
         </div>
       </div>
       <h3>{{ project.name }}</h3>
-      <project-detail v-if="detailIsVisible" :project="project" />
+      <project-detail v-if="detailIsVisible"
+                      :project="project"
+                      @closeDetail="closeDetail" />
   </div>
 </template>
 
@@ -39,6 +41,10 @@ export default {
     };
   },
   methods: {
+    closeDetail() {
+      this.toggleHoveredProject();
+      this.toggleVisibleDetail();
+    },
     toggleHoveredProject() {
       this.hoveredProject = !this.hoveredProject;
     },
