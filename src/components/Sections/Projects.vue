@@ -47,10 +47,6 @@ export default {
               src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274088/portfolio-website/projects/lartisan-du-deux-roues/ou%CC%80-nous-trouver.png',
               alt: 'lartisan-du-deux-roues-localization-img',
             },
-            {
-              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274088/portfolio-website/projects/lartisan-du-deux-roues/e%CC%81quipe.png',
-              alt: 'lartisan-du-deux-roues-team-img',
-            },
           ],
         },
         {
@@ -73,10 +69,6 @@ export default {
               alt: 'izifret-dashboard-img',
             },
             {
-              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274124/portfolio-website/projects/izifret/regular-routes.png',
-              alt: 'izifret-regular-routes-img',
-            },
-            {
               src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274124/portfolio-website/projects/izifret/shipments.png',
               alt: 'izifret-shipments-img',
             },
@@ -86,7 +78,7 @@ export default {
           name: 'Charles Michel Photography',
           description: 'Created a website for french photographer Charles Michel to showcase his work',
           stack: 'Vue.js, JavaScript, HTML, SCSS, Tailwind.css',
-          feedback: 'More than pleased with Henri\'s work during the project. Not only he followed what I told him but also proposed original ideas that were adopted. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse!',
+          feedback: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse!',
           link: {
             display: 'www.charlesmichel-photography.com',
             href: 'https//:charlesmichel-photography.com',
@@ -96,10 +88,6 @@ export default {
               src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586272887/portfolio-website/projects/charles-michel-photography/main.png',
               alt: 'charles-michel-photography-main-img',
               main: true,
-            },
-            {
-              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586272886/portfolio-website/projects/charles-michel-photography/desktop-about-me.png',
-              alt: 'charles-michel-photography-about-me-img',
             },
             {
               src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586272886/portfolio-website/projects/charles-michel-photography/desktop-contact.png',

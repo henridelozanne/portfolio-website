@@ -8,12 +8,13 @@
               </div>
             </div>
             <div class="small-images-ctn">
-                <img v-for="(smallImage, i) in smallImages"
+                <img v-for="smallImage in smallImages"
                      :key="smallImage.src"
                      :src="smallImage.src"
                      :alt="smallImage.alt"
-                     @click="setNewMainImage(smallImage, i)"
-                     class="small-img">
+                     @click="setNewMainImage(smallImage)"
+                     class="small-img"
+                     :class="{'small-img-current': smallImage.src === mainImage.src}">
               </div>
           </div>
           <div class="description-ctn">
@@ -87,9 +88,8 @@ export default {
     project: { type: Object },
   },
   mounted() {
-    this.mainImage.src = this.project.images.filter((img) => img.main)[0].src;
-    this.mainImage.alt = this.project.images.filter((img) => img.main)[0].alt;
-    this.smallImages = this.project.images.filter((img) => !img.main);
+    [this.mainImage] = this.project.images.filter((img) => img.main);
+    this.smallImages = this.project.images;
   },
   data() {
     return {
@@ -101,10 +101,8 @@ export default {
     };
   },
   methods: {
-    setNewMainImage(payload, i) {
-      this.mainImage.src = payload.src;
-      this.mainImage.alt = payload.alt;
-      this.smallImages.splice(i, 1, this.mainImage);
+    setNewMainImage(payload) {
+      this.mainImage = payload;
     },
   },
 };
@@ -167,6 +165,14 @@ export default {
                 height: 100px;
                 box-shadow: 2px 4px 10px rgba(0,0,0,.4);
                 cursor: pointer;
+              }
+
+              .small-img-current {
+                padding-top: 4px;
+                padding-bottom: 4px;
+                border-top: 4px solid theme('colors.secondary');
+                border-bottom: 4px solid theme('colors.secondary');
+                box-shadow: unset;
               }
             }
         }
