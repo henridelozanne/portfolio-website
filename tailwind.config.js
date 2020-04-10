@@ -10,7 +10,14 @@ module.exports = {
         'custom-grey-dark': '#828282',
         'custom-beige': '#FDF6F6',
       }
-    }
+    },
+    screens: {
+      'xs': {'max': '639px'},
+      'sm': {'min': '640px', 'max': '767px'},
+      'md': {'min': '768px', 'max': '1023px'},
+      'lg': {'min': '1024px', 'max': '1279px'},
+      'xl': {'min': '1280px'},
+    },
   },
   variants: {},
   plugins: [],

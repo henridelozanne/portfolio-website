@@ -18,7 +18,7 @@
                 alt="pixel-perfect-code img">
           <img v-else src="../../assets/pixel-perfect-code-h.png" alt="pixel-perfect-code img">
         </div>
-        <p>Pixel perfect code</p>
+        <p class="competence-label">Pixel perfect code</p>
       </div>
       <div @mouseenter="toggleHoveredImage('responsive')"
            @mouseleave="toggleHoveredImage('responsive')">
@@ -27,7 +27,7 @@
              alt="responsive-design-img">
           <img v-else src="../../assets/responsive-design-h.png" alt="responsive-design-img">
         </div>
-        <p>Responsive design</p>
+        <p class="competence-label">Responsive design</p>
       </div>
       <div @mouseenter="toggleHoveredImage('performance')"
            @mouseleave="toggleHoveredImage('performance')">
@@ -36,7 +36,7 @@
              alt="performance-oriented img">
           <img v-else src="../../assets/performance-oriented-h.png" alt="performance-oriented img">
         </div>
-        <p>Performance oriented</p>
+        <p class="competence-label">Performance oriented</p>
       </div>
       <div @mouseenter="toggleHoveredImage('ux')"
            @mouseleave="toggleHoveredImage('ux')">
@@ -46,7 +46,7 @@
           <img v-else src="../../assets/ux-driven-development-h.png"
                alt="ux-driven-development img">
         </div>
-        <p>UX driven development</p>
+        <p class="competence-label">UX driven development</p>
       </div>
     </div>
   </section>
@@ -82,6 +82,36 @@ section {
   padding: 0 20px;
 }
 
+@screen xs {
+  section {
+    background: red;
+  }
+}
+
+@screen sm {
+  section {
+    // background: green;
+  }
+}
+
+@screen md {
+  section {
+    // background: blue;
+  }
+}
+
+@screen lg {
+  section {
+    // background: brown;
+  }
+}
+
+@screen xl {
+  section {
+    // background: teal;
+  }
+}
+
 .presentation-ctn {
   width: 100%;
   display: flex;
@@ -98,12 +128,68 @@ section {
     margin-right: 50px;
   }
 
+  @screen lg {
+    .presentation-header {
+      font-size: 42px;
+    }
+  }
+
+  @screen md {
+    .presentation-header {
+      font-size: 38px;
+    }
+  }
+
+  @screen sm {
+    .presentation-header {
+      font-size: 38px;
+      margin-right: 0;
+      text-align: left;
+      width: 100%;
+    }
+  }
+
   .presentation-detail {
     color: theme('colors.custom-white');
     width: 570px;
     font-weight: 600;
     font-size: 20px;
     line-height: 1.7em;
+  }
+
+  @screen lg {
+    .presentation-detail {
+      font-size: 18px;
+    }
+  }
+
+  @screen md {
+    .presentation-detail {
+      font-size: 17px;
+    }
+  }
+
+  @screen sm {
+    .presentation-detail {
+      font-size: 17px;
+      width: 100%;
+      align-self: flex-end;
+      margin-top: 50px;
+      text-align: right;
+      padding-left: 21%;
+    }
+  }
+}
+
+@screen sm {
+  .presentation-ctn {
+    align-items: flex-start;
+  }
+}
+
+@screen sm {
+  .presentation-ctn {
+    flex-direction: column;
   }
 }
 
@@ -122,12 +208,55 @@ section {
       img {
         height: 115px;
       }
+
+      @screen lg {
+        img {
+          height: 100px;
+        }
+      }
+
+      @screen md {
+        img {
+          height: 80px;
+        }
+      }
+
+      @screen sm {
+        img {
+          height: 80px;
+        }
+      }
     }
 
     p {
       color: theme('colors.custom-white');
       margin-top: 15px;
+      text-align: center;
     }
+
+    @screen md {
+      p {
+        width: 100px;
+      }
+    }
+
+    @screen sm {
+      p {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@screen md {
+  .competences-ctn {
+    width: 100%;
+  }
+}
+
+@screen sm {
+  .competences-ctn {
+    width: 100%;
   }
 }
 </style>
