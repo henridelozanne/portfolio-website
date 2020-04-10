@@ -8,6 +8,7 @@ module.exports = {
         'custom-white': '#FDF6F6',
         'custom-grey': '#f2f2f2',
         'custom-grey-dark': '#828282',
+        'custom-beige': '#FDF6F6',
       }
     }
   },
