@@ -72,7 +72,7 @@
                   </span>
                 </div>
                 <div class="list-content">
-                  <a :href="project.link.href">{{ project.link.display }}</a>
+                  <a :href="project.link.href" target="_blank">{{ project.link.display }}</a>
                 </div>
               </li>
             </ul>

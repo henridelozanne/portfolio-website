@@ -31,7 +31,7 @@ export default {
           feedback: 'I recommend Henri for his work in this project and the nice animations he created',
           link: {
             display: 'www.lartisandudeuxroues.com',
-            href: 'https//:lartisandudeuxroues.com',
+            href: 'https://lartisandudeuxroues.com/',
           },
           images: [
             {
@@ -56,7 +56,7 @@ export default {
           feedback: 'Henri a fait preuve de beaucoup de professionnalisme',
           link: {
             display: 'www.izifret.com',
-            href: 'https//:izifret.com',
+            href: 'https://izifret.com/fr/',
           },
           images: [
             {
@@ -81,7 +81,7 @@ export default {
           feedback: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse!',
           link: {
             display: 'www.charlesmichel-photography.com',
-            href: 'https//:charlesmichel-photography.com',
+            href: 'http://www.charlesmichel-photography.com/',
           },
           images: [
             {
@@ -105,7 +105,7 @@ export default {
           stack: 'JavaScript, HTML, CSS',
           link: {
             display: 'www.space-tetris.com',
-            href: 'https//:space-tetris.netlify.com',
+            href: 'https://space-tetris.netlify.com/',
           },
           images: [
             {
