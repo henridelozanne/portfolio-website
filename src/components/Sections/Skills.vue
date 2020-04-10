@@ -63,12 +63,15 @@ export default {
 <style scoped lang="scss">
 section {
   background: theme('colors.custom-black');
+  display: flex;
+  flex-flow: column;
 }
 
 .skills-blocks-ctn {
   display: flex;
   justify-content: center;
-  margin-top: 80px; /* FIXME: to be changed, won't be responsive like that */
+  align-items: center;
+  flex-grow: 1;
 
   div {
     height: 700px;

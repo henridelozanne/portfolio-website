@@ -105,7 +105,7 @@ export default {
               this.notifType = '';
             }, 3000);
           })
-          .catch((err) => {
+          .catch(() => {
             this.notifMessage = 'An error occured, please try again later';
             this.notifType = 'error';
             this.notificationIsVisible = true;
@@ -154,10 +154,12 @@ export default {
 <style scoped lang="scss">
 section {
   background: theme('colors.custom-grey');
+  display: flex;
+  flex-flow: column;
 }
 
 .form-ctn {
-  height: 100%;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;

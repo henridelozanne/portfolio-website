@@ -128,11 +128,16 @@ export default {
 <style scoped lang="scss">
 section {
   background: theme('colors.custom-grey');
+  display: flex;
+  flex-flow: column;
 }
 
 .projects-ctn {
+  flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  padding: 50px 0;
 }
 </style>

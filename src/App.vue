@@ -35,7 +35,7 @@ body {
 }
 
 .website-section {
-  height: 100vh;
+  min-height: 100vh;
   padding: 1em;
 }
 </style>
