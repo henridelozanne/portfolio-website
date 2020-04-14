@@ -4,7 +4,6 @@
     <div class="projects-ctn">
       <project-item v-for="project in projects"
                     :key="project.name"
-                    class="project-item"
                     :project="project">
       </project-item>
     </div>
@@ -134,10 +133,43 @@ section {
 
 .projects-ctn {
   flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 440px 440px 440px;
+  grid-template-rows: auto auto auto;
+  grid-gap: 40px;
   padding: 50px 0;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 1475px) {
+  .projects-ctn {
+    grid-template-columns: 440px 440px;
+    grid-template-rows: auto auto;
+    grid-gap: 40px 60px;
+  }
+}
+
+@screen md {
+  .projects-ctn {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@screen sm {
+  .projects-ctn {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@screen xs {
+  .projects-ctn {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
 }
 </style>
