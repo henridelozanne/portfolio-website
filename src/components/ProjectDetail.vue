@@ -127,7 +127,7 @@ export default {
 .modal {
     height: 100vh;
     width: 100vw;
-    background: rgba(0,0,0,.75);
+    background: rgba(0,0,0,.83);
     position: fixed;
     top: 0;
     left: 0;
