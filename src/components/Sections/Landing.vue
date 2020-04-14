@@ -82,36 +82,6 @@ section {
   padding: 0 20px;
 }
 
-@screen xs {
-  section {
-    background: red;
-  }
-}
-
-@screen sm {
-  section {
-    // background: green;
-  }
-}
-
-@screen md {
-  section {
-    // background: blue;
-  }
-}
-
-@screen lg {
-  section {
-    // background: brown;
-  }
-}
-
-@screen xl {
-  section {
-    // background: teal;
-  }
-}
-
 .presentation-ctn {
   width: 100%;
   display: flex;
@@ -141,6 +111,15 @@ section {
   }
 
   @screen sm {
+    .presentation-header {
+      font-size: 38px;
+      margin-right: 0;
+      text-align: left;
+      width: 100%;
+    }
+  }
+
+  @screen xs {
     .presentation-header {
       font-size: 38px;
       margin-right: 0;
@@ -179,6 +158,17 @@ section {
       padding-left: 21%;
     }
   }
+
+  @screen xs {
+    .presentation-detail {
+      font-size: 17px;
+      width: 100%;
+      align-self: flex-end;
+      margin-top: 50px;
+      text-align: right;
+      padding-left: 21%;
+    }
+  }
 }
 
 @screen sm {
@@ -188,6 +178,12 @@ section {
 }
 
 @screen sm {
+  .presentation-ctn {
+    flex-direction: column;
+  }
+}
+
+@screen xs {
   .presentation-ctn {
     flex-direction: column;
   }
@@ -226,6 +222,12 @@ section {
           height: 80px;
         }
       }
+
+      @screen xs {
+        img {
+          height: 70px;
+        }
+      }
     }
 
     p {
@@ -257,6 +259,16 @@ section {
 @screen sm {
   .competences-ctn {
     width: 100%;
+  }
+}
+
+@screen xs {
+  .competences-ctn {
+    display: grid;
+    width: 100%;
+    grid-template-columns:  1fr 1fr;
+    grid-template-rows:  auto auto;
+    grid-row-gap: 20px;
   }
 }
 </style>
