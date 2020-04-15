@@ -1,15 +1,10 @@
 <template>
   <section>
     <section-title :title="'Technical skills'" :lightBackground="false"></section-title>
-    <div class="skills-blocks-ctn">
-      <div class="left-block">
-        <skill-item v-for="skill in leftSkills" :key="skill.name"
-                  :name="skill.name" :description="skill.description" :position="'left'">
-        </skill-item>
-      </div>
-      <div class="right-block">
-        <skill-item v-for="skill in rightSkills" :key="skill.name"
-                  :name="skill.name" :description="skill.description" :position="'right'">
+    <div class="skills-ctn">
+      <div class="inner-ctn">
+        <skill-item v-for="skill in skills" :key="skill.name" :id="skill.id"
+            :skill="skill">
         </skill-item>
       </div>
     </div>
@@ -39,21 +34,30 @@ export default {
       skills: [{
         name: 'Vue.js',
         description: 'and all related technologies : VueX, Nuxt.js, Vue Router, Vue Loader, Vue Devtools, Vuetify...',
-      }, {
-        name: 'HTML/SCSS',
-        description: 'clean style declarations through SCSS, Tailwind enthusiast',
-      }, {
-        name: 'API',
-        description: 'integration of external APIs to complete your website (Paypal API, Google Maps API, AM Charts…)',
+        id: 'vue',
       }, {
         name: 'Javascript',
         description: 'daily practice of JS in ES6 notation',
+        id: 'javascript',
+        position: 'right',
+      }, {
+        name: 'HTML/SCSS',
+        description: 'clean style declarations through SCSS, Tailwind enthusiast',
+        id: 'html',
       }, {
         name: 'Testing',
         description: 'E2E testing with Cypress.io, unit testing with Jest',
+        id: 'testing',
+        position: 'right',
+      }, {
+        name: 'API',
+        description: 'integration of external APIs to complete your website (Paypal API, Google Maps API, AM Charts…)',
+        id: 'api',
       }, {
         name: 'UI Toolkits',
         description: 'Bootstrap, Material Design, Bulma, Element UI… everything needed for quick and clean styles applications',
+        id: 'ui',
+        position: 'right',
       }],
     };
   },
@@ -67,26 +71,51 @@ section {
   flex-flow: column;
 }
 
-.skills-blocks-ctn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.skills-ctn {
   flex-grow: 1;
+  position: relative;
 
-  div {
-    height: 700px;
-    width: 480px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+    .inner-ctn {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: grid;
+      padding: 100px 20%;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 100px;
+      grid-template-areas: "vue ."
+                            ". javascript"
+                            "html ."
+                            ". testing"
+                            "api ."
+                            ". ui";
 
-  .left-block {
-    margin-right: 70px;
-  }
+      #vue {
+        grid-area: vue;
+      }
 
-  .right-block {
-    margin-top: 50px;
-  }
+      #javascript {
+        grid-area: javascript;
+      }
+
+      #html {
+        grid-area: html;
+      }
+
+      #testing {
+        grid-area: testing;
+      }
+
+      #api {
+        grid-area: api;
+      }
+
+      #ui {
+        grid-area: ui;
+      }
+    }
 }
 </style>
