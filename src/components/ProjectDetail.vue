@@ -367,9 +367,31 @@ export default {
       fill: theme('colors.custom-beige');
       width: 27px;
       height: 27px;
-      border-bottom: 1px solid rgb(111, 111, 93);
-      border-left: 1px solid rgb(111, 111, 93);
       cursor: pointer;
+    }
+
+    @screen lg {
+      .close-icon {
+        background: #2E2B2B;
+      }
+    }
+
+    @screen md {
+      .close-icon {
+        background: #2E2B2B;
+      }
+    }
+
+    @screen sm {
+      .close-icon {
+        background: #2E2B2B;
+      }
+    }
+
+    @screen xs {
+      .close-icon {
+        background: #2E2B2B;
+      }
     }
   }
 
