@@ -35,29 +35,32 @@ export default {
         name: 'Vue.js',
         description: 'and all related technologies : VueX, Nuxt.js, Vue Router, Vue Loader, Vue Devtools, Vuetify...',
         id: 'vue',
+        class: 'left-skill',
       }, {
         name: 'Javascript',
         description: 'daily practice of JS in ES6 notation',
         id: 'javascript',
-        position: 'right',
+        class: 'right-skill',
       }, {
         name: 'HTML/SCSS',
         description: 'clean style declarations through SCSS, Tailwind enthusiast',
         id: 'html',
+        class: 'left-skill',
       }, {
         name: 'Testing',
         description: 'E2E testing with Cypress.io, unit testing with Jest',
         id: 'testing',
-        position: 'right',
+        class: 'right-skill',
       }, {
-        name: 'API',
+        name: 'API use',
         description: 'integration of external APIs to complete your website (Paypal API, Google Maps API, AM Charts…)',
         id: 'api',
+        class: 'left-skill',
       }, {
         name: 'UI Toolkits',
         description: 'Bootstrap, Material Design, Bulma, Element UI… everything needed for quick and clean styles applications',
         id: 'ui',
-        position: 'right',
+        class: 'right-skill',
       }],
     };
   },
@@ -115,6 +118,51 @@ section {
 
       #ui {
         grid-area: ui;
+      }
+    }
+
+    @screen md {
+      .inner-ctn {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-column-gap: 100px;
+        grid-template-areas: "vue"
+                              "javascript"
+                              "html"
+                              "testing"
+                              "api"
+                              "ui";
+        padding: 100px 15%;
+      }
+    }
+
+    @screen sm {
+      .inner-ctn {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-column-gap: 100px;
+        grid-template-areas: "vue"
+                              "javascript"
+                              "html"
+                              "testing"
+                              "api"
+                              "ui";
+        padding: 100px 15%;
+      }
+    }
+
+    @screen xs {
+      .inner-ctn {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-column-gap: 100px;
+        grid-template-areas: "vue"
+                              "javascript"
+                              "html"
+                              "testing"
+                              "api"
+                              "ui";
+        padding: 100px 15%;
       }
     }
 }
