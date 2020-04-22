@@ -80,7 +80,7 @@ export default {
           feedback: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus alias blanditiis eaque iusto. At esse deleniti expedita maxime accusantium fuga. Itaque alias id cumque eum. Minus nulla reprehenderit eos esse!',
           link: {
             display: 'www.charlesmichel-photography.com',
-            href: 'http://www.charlesmichel-photography.com/',
+            href: 'https://charlesmichel-photography.com/',
           },
           images: [
             {
