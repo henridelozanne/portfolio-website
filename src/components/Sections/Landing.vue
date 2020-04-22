@@ -121,7 +121,16 @@ section {
 
   @screen xs {
     .presentation-header {
-      font-size: 38px;
+      font-size: 28px;
+      margin-right: 0;
+      text-align: left;
+      width: 100%;
+    }
+  }
+
+  @screen xxs {
+    .presentation-header {
+      font-size: 24px;
       margin-right: 0;
       text-align: left;
       width: 100%;
@@ -161,10 +170,21 @@ section {
 
   @screen xs {
     .presentation-detail {
-      font-size: 17px;
+      font-size: 13px;
       width: 100%;
       align-self: flex-end;
-      margin-top: 50px;
+      margin-top: 30px;
+      text-align: right;
+      padding-left: 21%;
+    }
+  }
+
+  @screen xxs {
+    .presentation-detail {
+      font-size: 11px;
+      width: 100%;
+      align-self: flex-end;
+      margin-top: 30px;
       text-align: right;
       padding-left: 21%;
     }
@@ -225,7 +245,13 @@ section {
 
       @screen xs {
         img {
-          height: 70px;
+          height: 45px;
+        }
+      }
+
+      @screen xxs {
+        img {
+          height: 38px;
         }
       }
     }
@@ -269,6 +295,18 @@ section {
     grid-template-columns:  1fr 1fr;
     grid-template-rows:  auto auto;
     grid-row-gap: 20px;
+
+    .competence-label {
+      font-size: 12px;
+    }
+  }
+}
+
+@screen xxs {
+  .competences-ctn {
+    .competence-label {
+      font-size: 10px;
+    }
   }
 }
 </style>
