@@ -9,24 +9,8 @@
       </h3>
       <p v-show="skillIsHovered" class="description">{{skill.description}}</p>
     </div>
-    <!-- FIXME: Factor by using a dynamic src -->
-    <img v-if="skill.name==='Vue.js'" src="../assets/skills-logos/vue-logo.png"
-         alt="vuejs-logo" :class="[{'hovered-img': skillIsHovered},
-         skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left']">
-    <img v-else-if="skill.name==='Javascript'" src="../assets/skills-logos/javascript-logo.png"
-         alt="javascript-logo" :class="[{'hovered-img': skillIsHovered},
-         skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left']">
-    <img v-else-if="skill.name==='HTML/SCSS'" src="../assets/skills-logos/html-logo.png"
-         alt="html-logo" :class="[{'hovered-img': skillIsHovered},
-         skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left']">
-    <img v-else-if="skill.name==='Testing'" src="../assets/skills-logos/cypress-logo.png"
-         alt="testing-logo" :class="[{'hovered-img': skillIsHovered},
-         skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left']">
-    <img v-else-if="skill.name==='API use'" src="../assets/skills-logos/api-logo.png"
-         alt="api-logo" :class="[{'hovered-img': skillIsHovered},
-         skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left']">
-    <img v-else-if="skill.name==='UI Toolkits'" src="../assets/skills-logos/element-ui-logo.png"
-         alt="element-ui-logo" :class="[{'hovered-img': skillIsHovered},
+    <img :src="`https://res.cloudinary.com/dcirj0x5j/image/upload/v1587571894/portfolio-website/Skills/${skill.imgUrl}.png`"
+         :alt="skill.imgUrl" :class="[{'hovered-img': skillIsHovered},
          skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left']">
   </div>
 </template>
