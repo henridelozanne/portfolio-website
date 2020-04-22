@@ -4,7 +4,7 @@
     <div class="skills-ctn">
       <div class="inner-ctn">
         <skill-item v-for="skill in skills" :key="skill.name" :id="skill.id"
-            :skill="skill">
+            :skill="skill" @skillEnter="skillEnter" @skillLeave="skillLeave">
         </skill-item>
       </div>
     </div>
@@ -36,33 +36,55 @@ export default {
         description: 'and all related technologies : VueX, Nuxt.js, Vue Router, Vue Loader, Vue Devtools, Vuetify...',
         id: 'vue',
         class: 'left-skill',
+        darkFilter: false,
       }, {
         name: 'Javascript',
         description: 'daily practice of JS in ES6 notation',
         id: 'javascript',
         class: 'right-skill',
+        darkFilter: false,
       }, {
         name: 'HTML/SCSS',
         description: 'clean style declarations through SCSS, Tailwind enthusiast',
         id: 'html',
         class: 'left-skill',
+        darkFilter: false,
       }, {
         name: 'Testing',
-        description: 'E2E testing with Cypress.io, unit testing with Jest',
+        description: 'E2E testing with Cypress, unit testing with Jest',
         id: 'testing',
         class: 'right-skill',
+        darkFilter: false,
       }, {
         name: 'API use',
         description: 'integration of external APIs to complete your website (Paypal API, Google Maps API, AM Charts…)',
         id: 'api',
         class: 'left-skill',
+        darkFilter: false,
       }, {
         name: 'UI Toolkits',
         description: 'Bootstrap, Material Design, Bulma, Element UI… everything needed for quick and clean styles applications',
         id: 'ui',
         class: 'right-skill',
+        darkFilter: false,
       }],
     };
+  },
+  methods: {
+    skillEnter(payload) {
+      this.skills.forEach((skill) => {
+        const skillCopy = skill;
+        if (skill.name !== payload) {
+          skillCopy.darkFilter = true;
+        }
+      });
+    },
+    skillLeave() {
+      this.skills.forEach((skill) => {
+        const skillCopy = skill;
+        skillCopy.darkFilter = false;
+      });
+    },
   },
 };
 </script>
@@ -118,6 +140,18 @@ section {
 
       #ui {
         grid-area: ui;
+      }
+    }
+
+    @media screen and (max-width: 1570px){
+      .inner-ctn {
+        padding: 100px 15%;
+      }
+    }
+
+    @screen lg {
+      .inner-ctn {
+        padding: 100px 8%;
       }
     }
 

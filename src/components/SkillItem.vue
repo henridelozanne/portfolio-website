@@ -1,9 +1,12 @@
 <template>
   <div class="skill-ctn"
-       :class="[skill.class, {'border-visible': skillIsHovered}]"
-       @mouseenter="toggleDescription" @mouseleave="toggleDescription">
+       :class="[skill.class,
+                {'hovered-skill': skillIsHovered, 'dark-filter': skill.darkFilter}]"
+       @mouseenter="mouseEnter" @mouseleave="mouseLeave">
     <div class="content">
-      <h3 :class="{'text-primary': skillIsHovered}">{{skill.name}}</h3>
+      <h3 :class="{'hovered-title': skillIsHovered, 'text-hovered': skill.darkFilter}">
+          {{skill.name}}
+      </h3>
       <p v-show="skillIsHovered" class="description">{{skill.description}}</p>
     </div>
     <!-- FIXME: Factor by using a dynamic src -->
@@ -35,8 +38,13 @@ export default {
     skill: { type: Object, default: () => {} },
   },
   methods: {
-    toggleDescription() {
-      this.skillIsHovered = !this.skillIsHovered;
+    mouseEnter() {
+      this.skillIsHovered = true;
+      this.$emit('skillEnter', this.skill.name);
+    },
+    mouseLeave() {
+      this.skillIsHovered = false;
+      this.$emit('skillLeave');
     },
   },
   data() {
@@ -80,9 +88,32 @@ export default {
       }
     }
 
+    .hovered-title {
+      color: theme('colors.primary') !important;
+    }
+
     .description {
       font-size: 1.1em;
       margin-top: 10px;
+    }
+
+    @screen sm {
+      .description {
+        font-size: 16px;
+      }
+    }
+
+    @screen xs {
+      .description {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+
+    @screen xxs {
+      .description {
+        font-size: 12px;
+      }
     }
   }
 
@@ -129,7 +160,7 @@ export default {
 
   @screen xs {
     .img-margin-left {
-      margin-right: 35px;
+      margin-right: 30px;
       margin-left: 0 !important;
     }
   }
@@ -144,6 +175,10 @@ export default {
   .img-margin-right {
     margin-right: 50px;
   }
+}
+
+.dark-filter {
+  filter: brightness(60%);
 }
 
   @screen md {
@@ -162,7 +197,7 @@ export default {
 
   @screen xs {
     .img-margin-right {
-      margin-left: 35px;
+      margin-left: 30px;
       margin-right: 0 !important;
     }
   }
@@ -218,9 +253,38 @@ export default {
   }
 }
 
-.border-visible {
+.hovered-skill {
   border: 5px solid theme('colors.secondary');
   border-radius: 15px;
+  padding: 20px;
+
+  img {
+    align-self: flex-start;
+  }
+}
+
+@screen md {
+  .hovered-skill {
+    border: unset;
+    margin: 20px 0;
+    padding: 0;
+  }
+}
+
+@screen sm {
+  .hovered-skill {
+    border: unset;
+    margin: 20px 0;
+    padding: 0;
+  }
+}
+
+@screen xs {
+  .hovered-skill {
+    border: unset;
+    margin: 20px 0;
+    padding: 0;
+  }
 }
 
 .flex-rowreverse {
