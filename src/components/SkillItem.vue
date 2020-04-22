@@ -74,6 +74,12 @@ export default {
       }
     }
 
+    @screen xxs {
+      h3 {
+        font-size: 18px;
+      }
+    }
+
     .description {
       font-size: 1.1em;
       margin-top: 10px;
@@ -94,7 +100,7 @@ export default {
 
   @screen xs {
     img {
-      height: 70px !important;
+      height: 50px !important;
     }
   }
 
@@ -123,7 +129,14 @@ export default {
 
   @screen xs {
     .img-margin-left {
-      margin-right: 50px;
+      margin-right: 35px;
+      margin-left: 0 !important;
+    }
+  }
+
+  @screen xxs {
+    .img-margin-left {
+      margin-right: 30px;
       margin-left: 0 !important;
     }
   }
@@ -149,7 +162,14 @@ export default {
 
   @screen xs {
     .img-margin-right {
-      margin-left: 50px;
+      margin-left: 35px;
+      margin-right: 0 !important;
+    }
+  }
+
+  @screen xxs {
+    .img-margin-right {
+      margin-left: 30px;
       margin-right: 0 !important;
     }
   }

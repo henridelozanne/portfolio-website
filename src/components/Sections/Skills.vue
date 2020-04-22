@@ -162,7 +162,22 @@ section {
                               "testing"
                               "api"
                               "ui";
-        padding: 100px 15%;
+        padding: 50px 15%;
+      }
+    }
+
+    @screen xxs {
+      .inner-ctn {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-column-gap: 100px;
+        grid-template-areas: "vue"
+                              "javascript"
+                              "html"
+                              "testing"
+                              "api"
+                              "ui";
+        padding: 45px 10%;
       }
     }
 }
