@@ -31,6 +31,18 @@ h1 {
         margin: 20px auto;
     }
 
+    @screen xs {
+        span {
+            font-size: 36px;
+        }
+    }
+
+    @screen xxs {
+        span {
+            font-size: 30px;
+        }
+    }
+
     .above {
         z-index: 1;
     }
