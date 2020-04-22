@@ -134,7 +134,7 @@ section {
 .projects-ctn {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: 440px 440px 440px;
+  grid-template-columns: 489px 489px 489px;
   grid-template-rows: auto auto auto;
   grid-gap: 40px;
   padding: 50px 0;
@@ -144,11 +144,11 @@ section {
   margin: 0 auto;
 }
 
-@media (max-width: 1475px) {
+@media (max-width: 1580px) {
   .projects-ctn {
-    grid-template-columns: 440px 440px;
+    grid-template-columns: 489px 489px;
     grid-template-rows: auto auto;
-    grid-gap: 40px 60px;
+    grid-gap: 30px;
   }
 }
 

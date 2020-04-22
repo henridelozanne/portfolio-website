@@ -50,6 +50,13 @@ export default {
     },
     toggleVisibleDetail() {
       this.detailIsVisible = !this.detailIsVisible;
+      if (this.detailIsVisible) {
+        document.body.style.height = '100vh';
+        document.body.style.overflowY = 'hidden';
+      } else {
+        document.body.style.height = 'unset';
+        document.body.style.overflowY = 'auto';
+      }
     },
   },
 };
@@ -68,11 +75,37 @@ export default {
         width: 450px;
         height: 247px;
         border-radius: 3px;
+        object-fit: cover;
+        object-position: 0 0;
+    }
+
+    @screen xs {
+      .project-thumb {
+        height: 158px;
+      }
     }
 
     h3 {
         margin-top: 20px;
     }
+
+    @screen xs {
+      h3 {
+        margin-top: 10px;
+      }
+    }
+}
+
+@screen xs {
+  .project-item {
+    padding: 10px;
+  }
+}
+
+@screen xxs {
+  .project-item {
+    padding: 5px;
+  }
 }
 
 .img-ctn {

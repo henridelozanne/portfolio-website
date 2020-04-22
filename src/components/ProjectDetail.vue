@@ -357,6 +357,7 @@ export default {
     @screen xs {
       .description-ctn {
         min-width: unset;
+        font-size: 12px;
       }
     }
 
