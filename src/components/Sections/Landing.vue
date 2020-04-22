@@ -11,39 +11,30 @@
       </div>
     </div>
     <div class="competences-ctn">
-      <div @mouseenter="toggleHoveredImage('pixel-perfect')"
-           @mouseleave="toggleHoveredImage('pixel-perfect')">
+      <div>
         <div class="img-ctn">
-          <img v-if="!hovered['pixel-perfect']" src="../../assets/pixel-perfect-code.png"
-                alt="pixel-perfect-code img">
-          <img v-else src="../../assets/pixel-perfect-code-h.png" alt="pixel-perfect-code img">
+          <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/pixel-perfect.png"
+               alt="pixel-perfect-code img">
         </div>
         <p class="competence-label">Pixel perfect code</p>
       </div>
-      <div @mouseenter="toggleHoveredImage('responsive')"
-           @mouseleave="toggleHoveredImage('responsive')">
+      <div>
         <div class="img-ctn">
-          <img v-if="!hovered.responsive" src="../../assets/responsive-design.png"
-             alt="responsive-design-img">
-          <img v-else src="../../assets/responsive-design-h.png" alt="responsive-design-img">
+          <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/responsive.png"
+               alt="responsive-design-img">
         </div>
         <p class="competence-label">Responsive design</p>
       </div>
-      <div @mouseenter="toggleHoveredImage('performance')"
-           @mouseleave="toggleHoveredImage('performance')">
+      <div>
         <div class="img-ctn">
-          <img v-if="!hovered.performance" src="../../assets/performance-oriented.png"
-             alt="performance-oriented img">
-          <img v-else src="../../assets/performance-oriented-h.png" alt="performance-oriented img">
+          <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/performance.png"
+               alt="performance-oriented img">
         </div>
         <p class="competence-label">Performance oriented</p>
       </div>
-      <div @mouseenter="toggleHoveredImage('ux')"
-           @mouseleave="toggleHoveredImage('ux')">
+      <div>
         <div class="img-ctn">
-          <img v-if="!hovered.ux" src="../../assets/ux-driven-development.png"
-             alt="ux-driven-development img">
-          <img v-else src="../../assets/ux-driven-development-h.png"
+          <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/user-experience.png"
                alt="ux-driven-development img">
         </div>
         <p class="competence-label">UX driven development</p>
@@ -223,6 +214,13 @@ section {
 
       img {
         height: 115px;
+        filter: invert(46%) sepia(10%) saturate(2097%)
+        hue-rotate(135deg) brightness(94%) contrast(90%);
+
+        &:hover {
+          filter: invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg)
+          brightness(96%) contrast(90%);
+        }
       }
 
       @screen lg {
