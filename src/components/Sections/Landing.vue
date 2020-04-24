@@ -11,28 +11,28 @@
       </div>
     </div>
     <div class="competences-ctn">
-      <div>
+      <div class="first">
         <div class="img-ctn">
           <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/pixel-perfect.png"
                alt="pixel-perfect-code img">
         </div>
         <p class="competence-label">Pixel perfect code</p>
       </div>
-      <div>
+      <div class="second">
         <div class="img-ctn">
           <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/responsive.png"
                alt="responsive-design-img">
         </div>
         <p class="competence-label">Responsive design</p>
       </div>
-      <div>
+      <div class="third">
         <div class="img-ctn">
           <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/performance.png"
                alt="performance-oriented img">
         </div>
         <p class="competence-label">Performance oriented</p>
       </div>
-      <div>
+      <div class="fourth">
         <div class="img-ctn">
           <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/user-experience.png"
                alt="ux-driven-development img">
@@ -44,8 +44,18 @@
 </template>
 
 <script>
+import gsap from 'gsap';
+
+const masterTL = gsap.timeline();
+
 export default {
   name: 'Landing',
+  mounted() {
+    masterTL.add(this.headerTL());
+    masterTL.add(this.detailTL());
+    masterTL.add(this.skillsTL());
+    masterTL.play();
+  },
   data() {
     return {
       hovered: {
@@ -57,6 +67,24 @@ export default {
     };
   },
   methods: {
+    headerTL() {
+      const tl = gsap.timeline({ defaults: { duration: 1.3 } });
+      tl.from('.presentation-header', { duration: 1, x: -200, opacity: 0 });
+      return tl;
+    },
+    detailTL() {
+      const tl = gsap.timeline({ defaults: { duration: 0.7 } });
+      tl.from('.presentation-detail', { duration: 1, x: 100, opacity: 0 });
+      return tl;
+    },
+    skillsTL() {
+      const tl = gsap.timeline({ defaults: { duration: 0.5, ease: 'slow' } });
+      tl.from('.first', { opacity: 0, y: 50 });
+      tl.from('.second', { opacity: 0, y: 50 }, '<.3');
+      tl.from('.third', { opacity: 0, y: 50 }, '<.3');
+      tl.from('.fourth', { opacity: 0, y: 50 }, '<.3');
+      return tl;
+    },
     toggleHoveredImage(item) {
       this.hovered[item] = !this.hovered[item];
     },
