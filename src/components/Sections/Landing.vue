@@ -11,31 +11,43 @@
       </div>
     </div>
     <div class="competences-ctn">
-      <div class="first">
+      <div class="first"
+           @mouseenter="mouseEnter('.first-img')"
+           @mouseleave="mouseLeave('.first-img')">
         <div class="img-ctn">
           <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/pixel-perfect.png"
-               alt="pixel-perfect-code img">
+               alt="pixel-perfect-code img"
+               class="first-img">
         </div>
         <p class="competence-label">Pixel perfect code</p>
       </div>
-      <div class="second">
+      <div class="second"
+           @mouseenter="mouseEnter('.second-img')"
+           @mouseleave="mouseLeave('.second-img')">
         <div class="img-ctn">
           <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/responsive.png"
-               alt="responsive-design-img">
+               alt="responsive-design-img"
+               class="second-img">
         </div>
         <p class="competence-label">Responsive design</p>
       </div>
-      <div class="third">
+      <div class="third"
+           @mouseenter="mouseEnter('.third-img')"
+           @mouseleave="mouseLeave('.third-img')">
         <div class="img-ctn">
           <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/performance.png"
-               alt="performance-oriented img">
+               alt="performance-oriented img"
+               class="third-img">
         </div>
         <p class="competence-label">Performance oriented</p>
       </div>
-      <div class="fourth">
+      <div class="fourth"
+           @mouseenter="mouseEnter('.fourth-img')"
+           @mouseleave="mouseLeave('.fourth-img')">
         <div class="img-ctn">
           <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/user-experience.png"
-               alt="ux-driven-development img">
+               alt="ux-driven-development img"
+               class="fourth-img">
         </div>
         <p class="competence-label">UX driven development</p>
       </div>
@@ -67,15 +79,29 @@ export default {
     };
   },
   methods: {
+    detailTL() {
+      const tl = gsap.timeline({ defaults: { duration: 0.7 } });
+      tl.from('.presentation-detail', { duration: 1, x: 100, opacity: 0 });
+      return tl;
+    },
     headerTL() {
       const tl = gsap.timeline({ defaults: { duration: 1.3 } });
       tl.from('.presentation-header', { duration: 1, x: -200, opacity: 0 });
       return tl;
     },
-    detailTL() {
-      const tl = gsap.timeline({ defaults: { duration: 0.7 } });
-      tl.from('.presentation-detail', { duration: 1, x: 100, opacity: 0 });
-      return tl;
+    mouseEnter(img) {
+      gsap.fromTo(img,
+        { filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)' },
+        {
+          filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)',
+          duration: 0.7,
+        });
+    },
+    mouseLeave(img) {
+      gsap.to(img, {
+        duration: 0.7,
+        filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)',
+      });
     },
     skillsTL() {
       const tl = gsap.timeline({ defaults: { duration: 0.5, ease: 'slow' } });
@@ -244,11 +270,6 @@ section {
         height: 115px;
         filter: invert(46%) sepia(10%) saturate(2097%)
         hue-rotate(135deg) brightness(94%) contrast(90%);
-
-        &:hover {
-          filter: invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg)
-          brightness(96%) contrast(90%);
-        }
       }
 
       @screen lg {
