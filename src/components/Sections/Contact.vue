@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="contact-section">
     <section-title :title="'Let\'s get in touch'" :lightBackground="true"></section-title>
 
     <div class="form-ctn">
@@ -28,6 +28,9 @@
 
 <script>
 import emailjs from 'emailjs-com';
+import gsap from 'gsap';
+import ScrollMagic from 'scrollmagic';
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import SectionTitle from '../SectionTitle.vue';
 import Notification from '../Notification.vue';
 
@@ -54,6 +57,25 @@ export default {
       },
       impossibleToSendMail: false,
     };
+  },
+  mounted() {
+    ScrollMagicPluginGsap(ScrollMagic, gsap);
+    const contactTimeline = gsap.timeline();
+    contactTimeline.from('.form-ctn', {
+      duration: 1,
+      y: 150,
+      opacity: 0,
+      ease: 'slow',
+    });
+
+    const controller = new ScrollMagic.Controller();
+    new ScrollMagic.Scene({
+      triggerElement: '.contact-section',
+      triggerHook: 0.5,
+    })
+      .setTween(contactTimeline)
+      .reverse(true)
+      .addTo(controller);
   },
   methods: {
     onBlur(input) {

@@ -63,8 +63,7 @@ const masterTL = gsap.timeline();
 export default {
   name: 'Landing',
   mounted() {
-    masterTL.add(this.headerTL());
-    masterTL.add(this.detailTL());
+    masterTL.add(this.textTL());
     masterTL.add(this.skillsTL());
     masterTL.play();
   },
@@ -79,14 +78,20 @@ export default {
     };
   },
   methods: {
-    detailTL() {
-      const tl = gsap.timeline({ defaults: { duration: 0.7 } });
-      tl.from('.presentation-detail', { duration: 1, x: 100, opacity: 0 });
-      return tl;
-    },
-    headerTL() {
-      const tl = gsap.timeline({ defaults: { duration: 1.3 } });
-      tl.from('.presentation-header', { duration: 1, x: -200, opacity: 0 });
+    textTL() {
+      const tl = gsap.timeline({ defaults: { duration: 1 } });
+      tl.from('.presentation-header', {
+        duration: 1,
+        x: -200,
+        opacity: 0,
+        ease: 'slow(0.7, 0.7, false)',
+      });
+      tl.from('.presentation-detail', {
+        duration: 1.2,
+        x: 100,
+        opacity: 0,
+        ease: 'slow(0.7, 0.7, false)',
+      }, '=-.2');
       return tl;
     },
     mouseEnter(img) {
@@ -104,11 +109,11 @@ export default {
       });
     },
     skillsTL() {
-      const tl = gsap.timeline({ defaults: { duration: 0.5, ease: 'slow' } });
+      const tl = gsap.timeline({ defaults: { duration: 0.8, ease: 'power2.out' }, delay: 0.2 });
       tl.from('.first', { opacity: 0, y: 50 });
-      tl.from('.second', { opacity: 0, y: 50 }, '<.3');
-      tl.from('.third', { opacity: 0, y: 50 }, '<.3');
-      tl.from('.fourth', { opacity: 0, y: 50 }, '<.3');
+      tl.from('.second', { opacity: 0, y: 50 }, '<.2');
+      tl.from('.third', { opacity: 0, y: 50 }, '<.2');
+      tl.from('.fourth', { opacity: 0, y: 50 }, '<.2');
       return tl;
     },
     toggleHoveredImage(item) {

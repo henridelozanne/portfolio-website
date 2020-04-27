@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="skills-section">
     <section-title :title="'Technical skills'" :lightBackground="false"></section-title>
     <div class="skills-ctn">
       <div class="inner-ctn">
@@ -12,6 +12,9 @@
 </template>
 
 <script>
+import gsap from 'gsap';
+import ScrollMagic from 'scrollmagic';
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import SkillItem from '../SkillItem.vue';
 import SectionTitle from '../SectionTitle.vue';
 
@@ -20,6 +23,26 @@ export default {
   components: {
     'skill-item': SkillItem,
     'section-title': SectionTitle,
+  },
+  mounted() {
+    ScrollMagicPluginGsap(ScrollMagic, gsap);
+    const skillsTimeline = gsap.timeline();
+    skillsTimeline.from('.skill-ctn', {
+      duration: 0.7,
+      y: 30,
+      opacity: 0,
+      ease: 'slow',
+      stagger: 0.3,
+    });
+
+    const controller = new ScrollMagic.Controller();
+    new ScrollMagic.Scene({
+      triggerElement: '.skills-section',
+      triggerHook: 0.45,
+    })
+      .setTween(skillsTimeline)
+      .reverse(false)
+      .addTo(controller);
   },
   computed: {
     leftSkills() {
