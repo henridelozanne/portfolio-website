@@ -1,34 +1,115 @@
 <template>
   <div class="skill-ctn"
+       :id="skill.id"
        :class="[skill.class,
-                {'hovered-skill': skillIsHovered, 'dark-filter': skill.darkFilter}]"
-       @mouseenter="mouseEnter" @mouseleave="mouseLeave">
+                {'hovered-skill': skillIsHovered},
+                skill.darkFilter ? 'dark-filter' : 'no-filter']"
+       @mouseenter="mouseEnter(skill.id)" @mouseleave="mouseLeave(skill.id)">
     <div class="content">
-      <h3 :class="{'hovered-title': skillIsHovered, 'text-hovered': skill.darkFilter}">
+      <h3 :id="`${skill.id}-title`">
           {{skill.name}}
       </h3>
-      <p v-show="skillIsHovered" class="description">{{skill.description}}</p>
+      <p v-show="skillIsHovered" :id="`${skill.id}-description`" class="description">
+        {{skill.description}}
+      </p>
     </div>
     <img :src="`https://res.cloudinary.com/dcirj0x5j/image/upload/v1587571894/portfolio-website/Skills/${skill.imgUrl}.png`"
-         :alt="skill.imgUrl" :class="[{'hovered-img': skillIsHovered},
+         :alt="skill.imgUrl" :id="`${skill.id}-img`" :class="[{'hovered-img': skillIsHovered},
          skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left']">
   </div>
 </template>
 
 <script>
+import gsap from 'gsap';
+
 export default {
   name: 'SkillItem',
   props: {
     skill: { type: Object, default: () => {} },
+    darkFilter: { type: Boolean, default: false },
   },
   methods: {
-    mouseEnter() {
+    mouseEnter(skillId) {
+      const primaryColor = '#A5E9E1';
+      const secondaryColor = '#388186';
       this.skillIsHovered = true;
       this.$emit('skillEnter', this.skill.name);
+      // Large screens
+      if (window.innerWidth >= 1024) {
+        gsap.fromTo(`#${skillId}-img`,
+          { filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)' },
+          {
+            filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)',
+            duration: 0.7,
+          });
+        gsap.to(`#${skillId}`, {
+          border: `5px solid ${secondaryColor}`,
+          'border-radius': '15px',
+          padding: '20px',
+          duration: 0.5,
+        });
+        gsap.from(`#${skillId}-description`, {
+          transform: 'scale(0.9, 0.9)',
+          opacity: 0,
+          duration: 0.4,
+        });
+        gsap.to(`#${skillId}-title`, {
+          color: primaryColor,
+          duration: 0.4,
+        });
+      } else {
+        // Small screens
+        gsap.fromTo(`#${skillId}-img`,
+          { filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)' },
+          {
+            filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)',
+            duration: 0.7,
+          });
+        gsap.from(`#${skillId}-description`, {
+          transform: 'scale(0.9, 0.9)',
+          opacity: 0,
+          duration: 0.4,
+        });
+        gsap.to(`#${skillId}-title`, {
+          color: primaryColor,
+          duration: 0.4,
+        });
+      }
     },
-    mouseLeave() {
+    mouseLeave(skillId) {
+      const customWhite = '#FDF6F6';
       this.skillIsHovered = false;
       this.$emit('skillLeave');
+      // Large screens
+      if (window.innerWidth >= 1024) {
+        gsap.fromTo(`#${skillId}-img`,
+          { filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)' },
+          {
+            filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)',
+            duration: 0.7,
+          });
+        gsap.to(`#${skillId}`, {
+          border: 0,
+          padding: 0,
+          duration: 0.5,
+        });
+        gsap.to(`#${skillId}-title`, {
+          color: customWhite,
+          duration: 0.4,
+        });
+      } else {
+        // Small screens
+        gsap.fromTo(`#${skillId}-img`,
+          { filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)' },
+          {
+            filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)',
+            duration: 0.7,
+          });
+        gsap.to(`#${skillId}-title`, {
+          color: customWhite,
+          duration: 0.4,
+        });
+      }
     },
   },
   data() {
@@ -120,8 +201,8 @@ export default {
   }
 
   .hovered-img {
-    filter: invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg)
-    brightness(96%) contrast(90%);
+    // filter: invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg)
+    // brightness(96%) contrast(90%);
   }
 
   .img-margin-left {
@@ -162,7 +243,7 @@ export default {
 }
 
 .dark-filter {
-  filter: brightness(60%);
+  filter: brightness(65%);
 }
 
   @screen md {
@@ -238,9 +319,9 @@ export default {
 }
 
 .hovered-skill {
-  border: 5px solid theme('colors.secondary');
-  border-radius: 15px;
-  padding: 20px;
+  // border: 5px solid theme('colors.secondary');
+  // border-radius: 15px;
+  // padding: 20px;
 
   img {
     align-self: flex-start;
