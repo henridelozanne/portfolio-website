@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" @click="closeModal">
+  <div class="modal" @click="backgroundClicked">
       <div class="modal-content">
           <div class="images-ctn">
             <div class="main-img-ctn">
@@ -77,29 +77,37 @@
               </li>
             </ul>
           </div>
-          <svg class="close-icon"
-               xmlns="http://www.w3.org/2000/svg"
-               viewBox="0 0 24 24"
-               width="24"
-               height="24"
-               @click="$emit('closeDetail')">
-            <path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95
-            4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414
-            4.95-4.95-4.95-4.95L7.05 5.636z"/>
+          <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                class="close-icon"
+                @click="closeIconClicked">
+              <path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95
+              4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414
+              4.95-4.95-4.95-4.95L7.05 5.636z"/>
           </svg>
       </div>
   </div>
 </template>
 
 <script>
+import gsap from 'gsap';
+
+const masterTL = gsap.timeline();
+
 export default {
   name: 'ProjectDetail',
   props: {
     project: { type: Object },
   },
-  mounted() {
+  created() {
     [this.mainImage] = this.project.images.filter((img) => img.main);
     this.smallImages = this.project.images;
+  },
+  mounted() {
+    masterTL.add(this.openModalTL());
+    masterTL.play();
   },
   data() {
     return {
@@ -111,13 +119,63 @@ export default {
     };
   },
   methods: {
-    closeModal(clickEvent) {
+    closeIconClicked() {
+      this.closeModalTL();
+      this.emitCloseDetail();
+    },
+    backgroundClicked(clickEvent) {
       if (clickEvent.target.className === 'modal') {
-        this.$emit('closeDetail');
+        this.closeModalTL();
+        this.emitCloseDetail();
       }
+    },
+    closeModalTL() {
+      const tl = gsap.timeline();
+      if (window.innerWidth > 1279) {
+        tl.to('.modal-content', { opacity: 0, duration: 0.5 });
+        tl.to('.modal', { opacity: 0, duration: 1 }, '+=0.2');
+      } else {
+        tl.to('.modal-content', { y: -900, duration: 0.5, ease: 'Power1.easeIn' });
+        tl.to('.modal', { opacity: 0, duration: 1 });
+      }
+    },
+    emitCloseDetail() {
+      const timeout = window.innerWidth > 1279 ? 1700 : 1500;
+      setTimeout(() => {
+        this.$emit('closeDetail');
+      }, timeout);
     },
     setNewMainImage(payload) {
       this.mainImage = payload;
+    },
+    openModalTL() {
+      const tl = gsap.timeline();
+      if (window.innerWidth > 1279) {
+        tl.from('.modal', { opacity: 0, duration: 0.5 });
+        tl.from('.modal-content', { width: 0, duration: 0.5 });
+        tl.from('.images-ctn', { opacity: 0, duration: 1 }, '+=0.1');
+        tl.from('.main-img-inner-ctn', { opacity: 0, duration: 1.2 }, '<0.4');
+        tl.from('.small-images-ctn', { opacity: 0, duration: 0.5 }, '<0.5');
+        tl.from('.small-img', {
+          opacity: 0,
+          y: 50,
+          stagger: { each: 0.2 },
+        }, '<');
+        tl.from('.description-ctn', { opacity: 0, y: -50, duration: 0.5 }, '-=0.3');
+        tl.from('.close-icon', { opacity: 0, duration: 1 }, '+=0.2');
+      } else {
+        tl.from('.modal', { opacity: 0, duration: 0.7 });
+        tl.from('.modal-content', { opacity: 0, duration: 0.7 }, '<');
+        tl.from('.images-ctn', { opacity: 0, duration: 0.6 }, '+=0.5');
+        tl.from('.description-ctn', {
+          opacity: 0,
+          y: 90,
+          duration: 0.5,
+          ease: 'Power1.easeOut',
+        }, '<0.5');
+        tl.from('.close-icon', { opacity: 0, duration: 1 });
+      }
+      return tl;
     },
   },
 };
@@ -156,6 +214,7 @@ export default {
 
       .main-img-ctn {
         padding: 50px 20px;
+        overflow: hidden;
 
         .main-img-inner-ctn {
           height: 100%;
@@ -226,6 +285,7 @@ export default {
         width: 100%;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
+        overflow: hidden;
 
         .small-img {
           height: 100px;
