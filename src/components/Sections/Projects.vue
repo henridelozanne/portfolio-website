@@ -50,6 +50,7 @@ export default {
     return {
       projects: [
         {
+          id: 'artisan',
           name: 'L\'Artisan du deux-roues',
           description: 'Website created for motorcycle and scooter repair shop',
           stack: 'Vue.js, GSAP, SCSS',
@@ -75,6 +76,7 @@ export default {
           ],
         },
         {
+          id: 'masques',
           name: 'Les Petits Masques Solidaires',
           description: 'Plateforme solidaire de créations de masques.',
           stack: 'Nuxt Node.js Gitlab Javascript.',
@@ -99,6 +101,7 @@ export default {
           ],
         },
         {
+          id: 'izifret',
           name: 'Izifret',
           description: 'Working at Izifret during 2 years and of the platform',
           stack: 'Vue.js, JavaScript, Node.js, Django, Cypress, Jest',
@@ -124,6 +127,7 @@ export default {
           ],
         },
         {
+          id: 'photography',
           name: 'Charles Michel Photography',
           description: 'Created a website for french photographer his work',
           stack: 'Vue.js, JavaScript, HTML, SCSS, Tailwind.css',
@@ -149,6 +153,7 @@ export default {
           ],
         },
         {
+          id: 'tetris',
           name: 'Space Tetris',
           description: 'First JavaScript project created at Ironhack at third week',
           stack: 'JavaScript, HTML, CSS',

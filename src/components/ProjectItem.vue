@@ -4,8 +4,10 @@
        @mouseleave="toggleHoveredProject">
       <div class="img-ctn">
         <img :src="mainImageSrc" :alt="mainImageAlt" class="project-thumb">
-        <div class="hovered-project" v-if="hoveredProject">
-            <span @click="toggleVisibleDetail">See more details</span>
+        <div :id="`${project.id}-hovered`" class="hovered-project" v-show="hoveredProject">
+            <span @click="toggleVisibleDetail" :id="`${project.id}-detail`"
+                  @mouseenter="mouseEnterDetail"
+                  @mouseleave="mouseLeaveDetail">See more details</span>
         </div>
       </div>
       <h3>{{ project.name }}</h3>
@@ -16,6 +18,7 @@
 </template>
 
 <script>
+import gsap from 'gsap';
 import ProjectDetail from './ProjectDetail.vue';
 
 export default {
@@ -45,8 +48,38 @@ export default {
       this.toggleHoveredProject();
       this.toggleVisibleDetail();
     },
+    mouseEnterDetail() {
+      gsap.to(`#${this.project.id}-detail`, {
+        background: '#353535',
+        color: 'white',
+        duration: 0.35,
+      });
+    },
+    mouseLeaveDetail() {
+      gsap.to(`#${this.project.id}-detail`, {
+        background: 'transparent',
+        color: '#FDF6F6',
+        duration: 0.35,
+      });
+    },
     toggleHoveredProject() {
       this.hoveredProject = !this.hoveredProject;
+      if (this.hoveredProject) {
+        gsap.to(`#${this.project.id}-hovered`, {
+          background: 'rgba(0, 0, 0, 0.6)',
+          opacity: 1,
+          'border-radius': '7px',
+          display: 'flex',
+          'justify-content': 'center',
+          'align-items': 'center',
+          duration: 0.55,
+        });
+      } else {
+        gsap.to(`#${this.project.id}-hovered`, {
+          opacity: 0,
+          duration: 0.35,
+        });
+      }
     },
     toggleVisibleDetail() {
       this.detailIsVisible = !this.detailIsVisible;
@@ -118,11 +151,11 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.6);
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // background: rgba(0,0,0,.6);
+    // border-radius: 7px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 
     span {
         color: theme('colors.custom-white');
@@ -132,8 +165,8 @@ export default {
         cursor: pointer;
 
         &:hover {
-            background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-            color: white;
+            // background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+            // color: white;
         }
     }
 }
