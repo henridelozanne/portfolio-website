@@ -18,7 +18,8 @@
         <textarea name="" id="" cols="30" rows="10" placeholder="Message *"
                   @blur="onBlur('message')" v-model="message" class="shadow"></textarea>
         <span class="error-msg" v-if="error.message">Message is a required field.</span>
-        <button class="send-button" @click="sendMail">Send</button>
+        <button class="send-button" @click="sendMail" @mouseenter="mouseEnterSendBtn"
+                @mouseleave="mouseLeaveSendBtn">Send</button>
       </form>
     </div>
     <notification v-if="notificationIsVisible"
@@ -98,6 +99,18 @@ export default {
       this.email = '';
       this.subject = '';
       this.message = '';
+    },
+    mouseEnterSendBtn() {
+      gsap.to('.send-button', {
+        'background-image': 'linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)',
+        color: '#388186',
+      });
+    },
+    mouseLeaveSendBtn() {
+      gsap.to('.send-button', {
+        color: 'white',
+        background: '#388186',
+      });
     },
     sendMail() {
       this.validateEmail();
