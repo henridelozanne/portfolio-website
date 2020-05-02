@@ -28,12 +28,10 @@ export default {
     ScrollMagicPluginGsap(ScrollMagic, gsap);
     const projectsTimeline = gsap.timeline();
     projectsTimeline.from('.stagger-item', {
-      duration: 0.6,
+      duration: 1.8,
       opacity: 0,
-      filter: 'blur(7px)',
-      ease: 'power3.out',
       stagger: {
-        each: 0.3,
+        each: 0.4,
       },
     });
 
