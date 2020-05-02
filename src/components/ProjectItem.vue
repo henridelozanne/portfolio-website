@@ -11,6 +11,10 @@
         </div>
       </div>
       <h3>{{ project.name }}</h3>
+      <div class="team-icon-ctn tooltip" v-if="project.team">
+        <span class="tooltiptext">team work</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+      </div>
       <project-detail v-if="detailIsVisible"
                       :project="project"
                       @closeDetail="closeDetail" />
@@ -103,6 +107,7 @@ export default {
     flex-direction: column;
     align-items: center;
     border-radius: 7px;
+    position: relative;
 
     .project-thumb {
         width: 450px;
@@ -169,5 +174,39 @@ export default {
             // color: white;
         }
     }
+}
+
+.team-icon-ctn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  border-radius: 50%;
+  padding: 7px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  right: 40%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
+  font-size: 14px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 </style>

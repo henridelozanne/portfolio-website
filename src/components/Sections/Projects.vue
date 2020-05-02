@@ -80,6 +80,7 @@ export default {
           name: 'Les Petits Masques Solidaires',
           description: 'Plateforme solidaire de créations de masques.',
           stack: 'Nuxt Node.js Gitlab Javascript.',
+          team: true,
           link: {
             display: 'www.lespetitsmasquessolidaires.com',
             href: 'https://lespetitsmasquessolidaires.com',
@@ -106,6 +107,7 @@ export default {
           description: 'Working at Izifret during 2 years and of the platform',
           stack: 'Vue.js, JavaScript, Node.js, Django, Cypress, Jest',
           feedback: 'Henri a fait preuve de beaucoup de professionnalisme',
+          team: true,
           link: {
             display: 'www.izifret.com',
             href: 'https://izifret.com/fr/',
