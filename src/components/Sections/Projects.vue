@@ -75,6 +75,30 @@ export default {
           ],
         },
         {
+          name: 'Les Petits Masques Solidaires',
+          description: 'Plateforme solidaire de créations de masques.',
+          stack: 'Nuxt Node.js Gitlab Javascript.',
+          link: {
+            display: 'www.lespetitsmasquessolidaires.com',
+            href: 'https://lespetitsmasquessolidaires.com',
+          },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1588154374/portfolio-website/projects/lpms/lpms-landing.png',
+              alt: 'lpms-landing',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1588154374/portfolio-website/projects/lpms/lpms-couturie%CC%80re.png',
+              alt: 'lpms-place',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1588154374/portfolio-website/projects/lpms/lpms-profile.png',
+              alt: 'lpms-profile',
+            },
+          ],
+        },
+        {
           name: 'Izifret',
           description: 'Working at Izifret during 2 years and of the platform',
           stack: 'Vue.js, JavaScript, Node.js, Django, Cypress, Jest',
