@@ -75,7 +75,8 @@ export default {
     });
     contactTimeline.from('.linkedin-ctn', {
       duration: 0.9,
-      x: 50,
+      y: -50,
+      opacity: 0,
       ease: 'slow',
     }, '<');
 
@@ -264,6 +265,7 @@ form {
     border-radius: 14px;
     box-shadow: 4px 4px 5px rgba(85, 85, 85, 0.4);
     cursor: pointer;
+    filter: invert(12%) sepia(6%) saturate(592%) hue-rotate(318deg) brightness(107%) contrast(88%);
   }
 }
 
