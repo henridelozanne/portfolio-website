@@ -88,6 +88,10 @@ export default {
           color: primaryColor,
           duration: 0.4,
         });
+        gsap.to(`#${skillId}`, {
+          margin: '15% 0',
+          duration: 0.4,
+        });
       }
     },
     hoverSkill() {
@@ -142,6 +146,10 @@ export default {
           });
         gsap.to(`#${skillId}-title`, {
           color: customWhite,
+          duration: 0.4,
+        });
+        gsap.to(`#${skillId}`, {
+          margin: '0',
           duration: 0.4,
         });
       }
