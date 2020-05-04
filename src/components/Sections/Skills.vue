@@ -4,7 +4,7 @@
     <div class="skills-ctn">
       <div class="inner-ctn">
         <skill-item v-for="skill in skills" :key="skill.name" :id="skill.id"
-            :skill="skill" @skillEnter="skillEnter" @skillLeave="skillLeave">
+            :skill="skill" @skillDevelop="skillDevelop" :oneItemDevelopped="oneItemDevelopped">
         </skill-item>
       </div>
     </div>
@@ -51,6 +51,9 @@ export default {
     rightSkills() {
       return this.skills.slice(3);
     },
+    oneItemDevelopped() {
+      return this.skills.some((skill) => skill.isDevelopped === true);
+    },
   },
   data() {
     return {
@@ -60,59 +63,49 @@ export default {
         id: 'vue',
         class: 'left-skill',
         imgUrl: 'vue-logo',
-        darkFilter: false,
+        isDevelopped: false,
       }, {
         name: 'Javascript',
         description: 'daily practice of JS in ES6 notation',
         id: 'javascript',
         class: 'right-skill',
         imgUrl: 'javascript-logo',
-        darkFilter: false,
+        isDevelopped: false,
       }, {
         name: 'HTML/SCSS',
         description: 'clean style declarations through SCSS, Tailwind enthusiast',
         id: 'html',
         class: 'left-skill',
         imgUrl: 'html-logo',
-        darkFilter: false,
+        isDevelopped: false,
       }, {
         name: 'Testing',
         description: 'E2E testing with Cypress, unit testing with Jest',
         id: 'testing',
         class: 'right-skill',
         imgUrl: 'cypress-logo',
-        darkFilter: false,
+        isDevelopped: false,
       }, {
         name: 'API use',
         description: 'integration of external APIs to complete your website (Paypal API, Google Maps API, AM Charts…)',
         id: 'api',
         class: 'left-skill',
         imgUrl: 'api-logo',
-        darkFilter: false,
+        isDevelopped: false,
       }, {
         name: 'UI Toolkits',
         description: 'Bootstrap, Material Design, Bulma, Element UI… everything needed for quick and clean styles applications',
         id: 'ui',
         class: 'right-skill',
         imgUrl: 'element-ui-logo',
-        darkFilter: false,
+        isDevelopped: false,
       }],
     };
   },
   methods: {
-    skillEnter(payload) {
-      this.skills.forEach((skill) => {
-        const skillCopy = skill;
-        if (skill.name !== payload) {
-          skillCopy.darkFilter = true;
-        }
-      });
-    },
-    skillLeave() {
-      this.skills.forEach((skill) => {
-        const skillCopy = skill;
-        skillCopy.darkFilter = false;
-      });
+    skillDevelop(payload) {
+      this.skills.filter((skill) => skill.name
+      === payload.name)[0].isDevelopped = payload.isDevelopped;
     },
   },
 };

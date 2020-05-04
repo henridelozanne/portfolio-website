@@ -3,8 +3,9 @@
        :id="skill.id"
        :class="[skill.class,
                 {'hovered-skill': skillIsHovered},
-                skill.darkFilter ? 'dark-filter' : 'no-filter']"
-       @mouseenter="mouseEnter(skill.id)" @mouseleave="mouseLeave(skill.id)">
+                darkFilter ? 'dark-filter' : 'no-filter']"
+       @click="skillClicked" @mouseenter="hoverSkill"
+       @mouseleave="unhoverSkill">
     <div class="content">
       <h3 :id="`${skill.id}-title`">
           {{skill.name}}
@@ -26,14 +27,26 @@ export default {
   name: 'SkillItem',
   props: {
     skill: { type: Object, default: () => {} },
-    darkFilter: { type: Boolean, default: false },
+    oneItemDevelopped: { type: Boolean, default: false },
+  },
+  watch: {
+    isDevelopped() {
+      if (this.isDevelopped) {
+        this.developSkill(this.skill.id);
+      } else this.undevelopSkill(this.skill.id);
+    },
+  },
+  computed: {
+    darkFilter() {
+      return this.oneItemDevelopped && !this.isDevelopped;
+    },
   },
   methods: {
-    mouseEnter(skillId) {
+    developSkill(skillId) {
       const primaryColor = '#A5E9E1';
       const secondaryColor = '#388186';
       this.skillIsHovered = true;
-      this.$emit('skillEnter', this.skill.name);
+      this.$emit('skillDevelop', { name: this.skill.name, isDevelopped: true });
       // Large screens
       if (window.innerWidth >= 1024) {
         gsap.fromTo(`#${skillId}-img`,
@@ -55,7 +68,8 @@ export default {
         });
         gsap.to(`#${skillId}-title`, {
           color: primaryColor,
-          duration: 0.4,
+          'text-decoration': 'none',
+          duration: 1,
         });
       } else {
         // Small screens
@@ -76,10 +90,31 @@ export default {
         });
       }
     },
-    mouseLeave(skillId) {
+    hoverSkill() {
+      const primaryColor = '#A5E9E1';
+      if (!this.isDevelopped && !this.oneItemDevelopped) {
+        gsap.to(`#${this.skill.id}-title`, {
+          color: primaryColor,
+          'text-decoration': 'underline',
+          duration: 1,
+        });
+      }
+    },
+    unhoverSkill() {
+      const customWhite = '#FDF6F6';
+      if (!this.isDevelopped && !this.oneItemDevelopped) {
+        this.$emit('skillDevelop', { name: this.skill.name, isDevelopped: false });
+        gsap.to(`#${this.skill.id}-title`, {
+          color: customWhite,
+          'text-decoration': 'none',
+          duration: 1,
+        });
+      }
+    },
+    undevelopSkill(skillId) {
       const customWhite = '#FDF6F6';
       this.skillIsHovered = false;
-      this.$emit('skillLeave');
+      this.$emit('skillDevelop', { name: this.skill.name, isDevelopped: false });
       // Large screens
       if (window.innerWidth >= 1024) {
         gsap.fromTo(`#${skillId}-img`,
@@ -111,10 +146,26 @@ export default {
         });
       }
     },
+    skillClicked() {
+      const that = this;
+      function handlerFunction() {
+        that.isDevelopped = false;
+        document.removeEventListener('click', handlerFunction);
+      }
+      this.isDevelopped = !this.isDevelopped;
+      if (this.isDevelopped) {
+        setTimeout(() => {
+          document.addEventListener('click', handlerFunction);
+        }, 200);
+      } else {
+        document.removeEventListener('click', handlerFunction);
+      }
+    },
   },
   data() {
     return {
       skillIsHovered: false,
+      isDevelopped: false,
     };
   },
 };
@@ -127,6 +178,7 @@ export default {
   flex-direction: row !important;
   justify-content: flex-end !important;
   align-items: center;
+  cursor: pointer;
 
   .content {
 
