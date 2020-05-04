@@ -22,6 +22,11 @@
                 @mouseleave="mouseLeaveSendBtn">Send</button>
       </form>
     </div>
+    <div class="linkedin-ctn">
+      <a href="https://www.linkedin.com/in/henridelozanne/" target="_blank">
+        <img class="linkedin-img" src="../../assets/linkedin-logo.png" alt="linkedin-logo">
+      </a>
+    </div>
     <notification v-if="notificationIsVisible"
     :message="notifMessage" :notifType="notifType"/>
   </section>
@@ -68,6 +73,11 @@ export default {
       opacity: 0,
       ease: 'slow',
     });
+    contactTimeline.from('.linkedin-ctn', {
+      duration: 0.9,
+      x: 50,
+      ease: 'slow',
+    }, '<');
 
     const controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
@@ -191,6 +201,7 @@ section {
   background: theme('colors.custom-grey');
   display: flex;
   flex-flow: column;
+  position: relative;
 }
 
 .form-ctn {
@@ -240,6 +251,19 @@ form {
     padding: 5px 20px;
     font-size: .9em;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.linkedin-ctn {
+  position: absolute;
+  top: 15%;
+  right: 0;
+
+  .linkedin-img {
+    width: 50px;
+    border-radius: 14px;
+    box-shadow: 4px 4px 5px rgba(85, 85, 85, 0.4);
+    cursor: pointer;
   }
 }
 
