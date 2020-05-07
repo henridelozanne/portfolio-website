@@ -14,7 +14,6 @@
 <script>
 import gsap from 'gsap';
 import ScrollMagic from 'scrollmagic';
-import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import SkillItem from '../SkillItem.vue';
 import SectionTitle from '../SectionTitle.vue';
 
@@ -25,7 +24,6 @@ export default {
     'section-title': SectionTitle,
   },
   mounted() {
-    ScrollMagicPluginGsap(ScrollMagic, gsap);
     const skillsTimeline = gsap.timeline();
     skillsTimeline.from('.skill-ctn', {
       duration: 0.7,

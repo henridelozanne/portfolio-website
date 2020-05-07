@@ -36,7 +36,6 @@
 import emailjs from 'emailjs-com';
 import gsap from 'gsap';
 import ScrollMagic from 'scrollmagic';
-import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import SectionTitle from '../SectionTitle.vue';
 import Notification from '../Notification.vue';
 
@@ -65,7 +64,6 @@ export default {
     };
   },
   mounted() {
-    ScrollMagicPluginGsap(ScrollMagic, gsap);
     const contactTimeline = gsap.timeline();
     contactTimeline.from('.form-ctn', {
       duration: 1,

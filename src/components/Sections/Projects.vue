@@ -14,7 +14,6 @@
 <script>
 import gsap from 'gsap';
 import ScrollMagic from 'scrollmagic';
-import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import SectionTitle from '../SectionTitle.vue';
 import ProjectItem from '../ProjectItem.vue';
 
@@ -25,13 +24,12 @@ export default {
     'section-title': SectionTitle,
   },
   mounted() {
-    ScrollMagicPluginGsap(ScrollMagic, gsap);
     const projectsTimeline = gsap.timeline();
     projectsTimeline.from('.stagger-item', {
-      duration: 1.8,
+      duration: 1,
       opacity: 0,
       stagger: {
-        each: 0.4,
+        each: 0.3,
       },
     });
 

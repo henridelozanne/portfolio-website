@@ -9,6 +9,10 @@
 </template>
 
 <script>
+import gsap from 'gsap';
+import ScrollMagic from 'scrollmagic';
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
+
 import LandingSection from './components/Sections/Landing.vue';
 import ProjectsSection from './components/Sections/Projects.vue';
 import SkillsSection from './components/Sections/Skills.vue';
@@ -20,6 +24,9 @@ export default {
     'projects-section': ProjectsSection,
     'skills-section': SkillsSection,
     'contact-section': ContactSection,
+  },
+  created() {
+    ScrollMagicPluginGsap(ScrollMagic, gsap);
   },
   name: 'App',
 };
