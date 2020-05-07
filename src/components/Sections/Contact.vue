@@ -269,6 +269,12 @@ form {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .linkedin-ctn {
+    display: none;
+  }
+}
+
 .error-msg {
   color: #f25944;
   font-size: 0.8em;
