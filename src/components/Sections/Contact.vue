@@ -72,12 +72,14 @@ export default {
       y: 150,
       opacity: 0,
       ease: 'slow',
+      stagger: 0.3,
     });
     contactTimeline.from('.linkedin-ctn', {
       duration: 0.9,
       y: -50,
       opacity: 0,
       ease: 'slow',
+      stagger: 0.3,
     }, '<');
 
     const controller = new ScrollMagic.Controller();
