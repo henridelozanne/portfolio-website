@@ -5,9 +5,10 @@
         Hi. I’m Henri, a front-end developer from Paris. Please take a look around!
       </h1>
       <div class="presentation-detail">
-        I am passionate about building websites that improve the lives of those around me.
-        I work as a freelancer for companies from any industry.
-        I can either join your team physically if you’re located in Paris, or work remotely.
+        Imagine transforming your ideas into an innovative and tailor-made website! <br>
+         Passionate about programming, I can help you concretizing
+          your concept into a digital solution with flexibility and adaptation to your
+           workflow. <br>Let’s build something great together!
       </div>
     </div>
     <div class="competences-ctn">
