@@ -133,14 +133,14 @@ export default {
       const tl = gsap.timeline();
       if (window.innerWidth > 1279) {
         tl.to('.modal-content', { opacity: 0, duration: 0.5 });
-        tl.to('.modal', { opacity: 0, duration: 1 }, '+=0.2');
+        tl.to('.modal', { opacity: 0, duration: 0.6 }, '+=0.2');
       } else {
         tl.to('.modal-content', { y: -900, duration: 0.5, ease: 'Power1.easeIn' });
-        tl.to('.modal', { opacity: 0, duration: 1 });
+        tl.to('.modal', { opacity: 0, duration: 0.6 });
       }
     },
     emitCloseDetail() {
-      const timeout = window.innerWidth > 1279 ? 1700 : 1500;
+      const timeout = window.innerWidth > 1279 ? 1200 : 1400;
       setTimeout(() => {
         this.$emit('closeDetail');
       }, timeout);

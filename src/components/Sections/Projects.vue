@@ -26,10 +26,10 @@ export default {
   mounted() {
     const projectsTimeline = gsap.timeline();
     projectsTimeline.from('.stagger-item', {
-      duration: 1,
+      duration: 0.8,
       opacity: 0,
       stagger: {
-        each: 0.3,
+        each: 0.4,
       },
     });
 
