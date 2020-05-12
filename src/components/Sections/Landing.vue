@@ -8,7 +8,7 @@
         Imagine transforming your ideas into an innovative and tailor-made website! <br>
          Passionate about programming, I can help you concretizing
           your concept into a digital solution with flexibility and adaptation to your
-           workflow. <br>Let’s build something great together!
+           workflow. <br><div class="lets-build">Let’s build something great together!</div>
       </div>
     </div>
     <div class="competences-ctn">
@@ -361,5 +361,9 @@ section {
       font-size: 10px;
     }
   }
+}
+
+.lets-build {
+  margin-top: 8px;
 }
 </style>

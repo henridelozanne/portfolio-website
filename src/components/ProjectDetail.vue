@@ -51,17 +51,6 @@
                 </div>
                 <div class="list-content">{{ project.stack }}</div>
               </li>
-              <li v-if="project.feedback">
-                <div class="list-label">
-                  <span>
-                    <span>
-                      Feedback:
-                    </span>
-                    <div class="underline underline-dark"></div>
-                  </span>
-                </div>
-                <div class="list-content">{{ project.feedback }}</div>
-              </li>
               <li>
                 <div class="list-label">
                   <span>
@@ -74,6 +63,17 @@
                 <div class="list-content">
                   <a :href="project.link.href" target="_blank">{{ project.link.display }}</a>
                 </div>
+              </li>
+              <li v-if="project.feedback">
+                <div class="list-label">
+                  <span>
+                    <span>
+                      Feedback:
+                    </span>
+                    <div class="underline underline-dark"></div>
+                  </span>
+                </div>
+                <div class="list-content feedback quote">{{ project.feedback }}</div>
               </li>
             </ul>
           </div>
@@ -411,6 +411,10 @@ export default {
           flex-basis: 70%;
           margin-left: 10px;
         }
+
+        .quote {
+          padding-right: 2px;
+        }
       }
     }
 
@@ -484,5 +488,9 @@ export default {
       margin: auto 5%;
     }
   }
+}
+
+.feedback {
+  font-style: italic;
 }
 </style>

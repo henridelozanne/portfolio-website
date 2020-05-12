@@ -48,9 +48,9 @@ export default {
         {
           id: 'artisan',
           name: 'L\'Artisan du deux-roues',
-          description: 'Website created for motorcycle and scooter repair shop',
-          stack: 'Vue.js, GSAP, SCSS',
-          feedback: 'I recommend Henri for his work in this project and the nice ',
+          description: 'Website creation for a motorcycle and scooter repair shop in Paris.',
+          stack: 'Vue.js, GSAP, SCSS, JavaScript, EmailJs',
+          feedback: '"Henri a su faire preuve de patience et de professionnalisme en comprenant notre besoin, et à su faire preuve de pédagogie envers mon associé et moi qui n\'y connaissons rien en Web développement. Sa réactivité et son dynamisme nous on permis de mettre en ligne notre site Web dans le temps imparti qui était assez serré. Je recommande donc vivement Henri qui a su nous rendre un site hautement qualitatif, et au-dessus de nos attentes."',
           link: {
             display: 'www.lartisandudeuxroues.com',
             href: 'https://lartisandudeuxroues.com/',
@@ -74,8 +74,8 @@ export default {
         {
           id: 'masques',
           name: 'Les Petits Masques Solidaires',
-          description: 'Plateforme solidaire de créations de masques.',
-          stack: 'Nuxt Node.js Gitlab Javascript.',
+          description: 'Joined LPMS\'s team as front-end developer to build a platform used by +10000 users that connects people who need face masks with people who can produce some.',
+          stack: 'Nuxt, Node.js, Gitlab, Javascript, i18n',
           team: true,
           link: {
             display: 'www.lespetitsmasquessolidaires.com',
@@ -100,9 +100,9 @@ export default {
         {
           id: 'izifret',
           name: 'Izifret',
-          description: 'Working at Izifret during 2 years and of the platform',
-          stack: 'Vue.js, JavaScript, Node.js, Django, Cypress, Jest',
-          feedback: 'Henri a fait preuve de beaucoup de professionnalisme',
+          description: 'Working at Izifret 2 years in a team of 3 developers with Agile methodology. Izifret is a company that offers digital management solutions in the transportation sector.',
+          stack: 'Vue.js, JavaScript, Node.js, Django, Cypress.io, Jest',
+          feedback: '"Henri a su s’adapter rapidement dans un nouvel environnement pour être pleinement autonome sur son poste. Il s’est investi avec professionnalisme dans l’ensemble des missions qui lui ont été confiées. Curieux, responsable, très impliqué,  il est naturellement doté d’un esprit critique et de synthèse. Bien intégré au sein de l\'équipe, il a également toujours su travailler de façon autonome."',
           team: true,
           link: {
             display: 'www.izifret.com',
@@ -127,9 +127,9 @@ export default {
         {
           id: 'photography',
           name: 'Charles Michel Photography',
-          description: 'Created a website for french photographer his work',
+          description: 'Website for french photographer Charles Michel to showcase his work.',
           stack: 'Vue.js, JavaScript, HTML, SCSS, Tailwind.css',
-          feedback: 'Lorem ipsum dolor, sit amet consectetur Minus nulla reprehenderit eos esse!',
+          feedback: '"Plus que satisfait par le travail fourni par Henri pour la réalisation de mon site web de photographie. Henri a été à l’écoute tout au long du projet et réactif dès que je lui demandais de faire des modifications et des ajustements. Henri n’a pas fait que suivre mes instructions, il a également été force de proposition et m’a donné bon nombre d’idées auxquelles je n’avais pas pensé. Je retravaillerai avec Henri dès que je déciderai de transformer mon site web en boutique en ligne. Encore merci à toi Henri!"',
           link: {
             display: 'www.charlesmichel-photography.com',
             href: 'https://charlesmichel-photography.com/',
@@ -153,7 +153,7 @@ export default {
         {
           id: 'tetris',
           name: 'Space Tetris',
-          description: 'First JavaScript project created at Ironhack at third week',
+          description: 'First project created during Ironhack bootcamp, consisting in making an online game with JavaScript.',
           stack: 'JavaScript, HTML, CSS',
           link: {
             display: 'www.space-tetris.com',
