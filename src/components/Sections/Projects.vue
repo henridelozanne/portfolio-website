@@ -151,6 +151,31 @@ export default {
           ],
         },
         {
+          id: 'cocktailio',
+          name: 'Cocktailio',
+          description: 'I created this website about cocktail recipes using an external API for contents, made all styles and components from scratch.',
+          stack: 'Vue, JavaScript, HTML, SCSS, GSAP, API',
+          link: {
+            display: 'www.cocktailio.netlify.app',
+            href: 'https://cocktailio.netlify.app/',
+          },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1589466128/portfolio-website/projects/cocktailio/landing.png',
+              alt: 'cocktailio-landing-img',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1586274160/portfolio-website/projects/cocktailio/modal.png',
+              alt: 'cocktailio-modal-img',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1589466127/portfolio-website/projects/cocktailio/mobile_menu.png',
+              alt: 'cocktailio-mobile-menu-img',
+            },
+          ],
+        },
+        {
           id: 'tetris',
           name: 'Space Tetris',
           description: 'First project created during Ironhack bootcamp, consisting in making an online game with JavaScript.',
