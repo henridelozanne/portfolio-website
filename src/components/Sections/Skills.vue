@@ -85,14 +85,14 @@ export default {
         isDevelopped: false,
       }, {
         name: 'API',
-        description: 'Integration of external APIs for payments, localization, charts…',
+        description: 'Integration of external APIs for payments, localization, charts and more…',
         id: 'api',
         class: 'left-skill',
         imgUrl: 'api-logo',
         isDevelopped: false,
       }, {
-        name: 'UI Toolkits',
-        description: 'I can create all components and styles from scratch but can also use Bootstrap, Material Design, Bulma, Element UI...',
+        name: 'UI_toolkits',
+        description: 'I can create all components and styles from scratch but can also use toolkits such as Bootstrap, Material Design, Bulma, Element UI...',
         id: 'ui',
         class: 'right-skill',
         imgUrl: 'element-ui-logo',
@@ -119,119 +119,36 @@ section {
 .skills-ctn {
   flex-grow: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
     .inner-ctn {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: grid;
-      padding: 100px 20%;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 100px;
-      grid-template-areas: "vue ."
-                            ". javascript"
-                            "html ."
-                            ". testing"
-                            "api ."
-                            ". ui";
-
-      #vue {
-        grid-area: vue;
-      }
-
-      #javascript {
-        grid-area: javascript;
-      }
-
-      #html {
-        grid-area: html;
-      }
-
-      #testing {
-        grid-area: testing;
-      }
-
-      #api {
-        grid-area: api;
-      }
-
-      #ui {
-        grid-area: ui;
-      }
+      min-height: 100%;
+      flex-grow: 1;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 110px 30px;
     }
 
-    @media screen and (max-width: 1570px){
+    @media screen and (max-width: 500px){
       .inner-ctn {
-        padding: 100px 15%;
-      }
-    }
-
-    @screen lg {
-      .inner-ctn {
-        padding: 100px 8%;
-      }
-    }
-
-    @screen md {
-      .inner-ctn {
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-        grid-column-gap: 100px;
-        grid-template-areas: "vue"
-                              "javascript"
-                              "html"
-                              "testing"
-                              "api"
-                              "ui";
-        padding: 100px 15%;
-      }
-    }
-
-    @screen sm {
-      .inner-ctn {
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-        grid-column-gap: 100px;
-        grid-template-areas: "vue"
-                              "javascript"
-                              "html"
-                              "testing"
-                              "api"
-                              "ui";
-        padding: 100px 15%;
+        padding: 100px 0;
       }
     }
 
     @screen xs {
       .inner-ctn {
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-        grid-column-gap: 100px;
-        grid-template-areas: "vue"
-                              "javascript"
-                              "html"
-                              "testing"
-                              "api"
-                              "ui";
-        padding: 50px 15%;
+        padding: 75px 0;
       }
     }
 
     @screen xxs {
       .inner-ctn {
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-        grid-column-gap: 100px;
-        grid-template-areas: "vue"
-                              "javascript"
-                              "html"
-                              "testing"
-                              "api"
-                              "ui";
-        padding: 45px 10%;
+        padding: 75px 0;
       }
     }
 }
