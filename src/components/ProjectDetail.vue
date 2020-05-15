@@ -487,6 +487,11 @@ export default {
       max-width: unset;
       margin: auto 5%;
     }
+
+
+    .main-img {
+      max-height: 180px !important;
+    }
   }
 }
 
