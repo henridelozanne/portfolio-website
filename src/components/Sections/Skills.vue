@@ -57,7 +57,7 @@ export default {
     return {
       skills: [{
         name: 'Vue.js',
-        description: 'Main tool for most of my projects. Knowledge of: VueX, Vue Router, Vue Loader, Vue Devtools, Vuetify...',
+        description: 'Main tool for most of my projects. Knowledge of: Nuxt, VueX, Vue Router, Vue Loader, Vue Devtools, Vuetify...',
         id: 'vue',
         class: 'left-skill',
         imgUrl: 'vue-logo',
