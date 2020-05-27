@@ -215,6 +215,7 @@ export default {
     h3 {
       font-weight: 600;
       font-size: 28px;
+      white-space: nowrap;
     }
 
     @screen sm {
