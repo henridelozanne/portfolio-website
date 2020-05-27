@@ -15,9 +15,11 @@
         {{skill.description}}
       </p>
     </div>
-    <img :src="`https://res.cloudinary.com/dcirj0x5j/image/upload/v1587571894/portfolio-website/Skills/${skill.imgUrl}.png`"
-         :alt="skill.imgUrl" :id="`${skill.id}-img`" :class="[{'hovered-img': skillIsHovered},
-         skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left']">
+    <div class="img-ctn" :class="skill.class
+      === 'right-skill' ? 'img-margin-right' : 'img-margin-left'">
+      <img :src="`https://res.cloudinary.com/dcirj0x5j/image/upload/v1587571894/portfolio-website/Skills/${skill.imgUrl}.png`"
+         :alt="skill.imgUrl" :id="`${skill.id}-img`" :class="[{'hovered-img': skillIsHovered}]">
+    </div>
   </div>
 </template>
 
@@ -190,6 +192,12 @@ export default {
   width: 35% !important;
 }
 
+.img-ctn {
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
 .temp-width.left-skill {
   margin-left: 10%;
 }
@@ -275,11 +283,19 @@ export default {
     img {
       height: 80px !important;
     }
+
+    .img-ctn {
+      min-width: 80px;
+    }
   }
 
   @screen xs {
     img {
       height: 50px !important;
+    }
+
+    .img-ctn {
+      min-width: 50px;
     }
   }
 
