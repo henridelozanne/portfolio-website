@@ -57,7 +57,7 @@ export default {
     return {
       skills: [{
         name: 'Vue.js',
-        description: 'Main tool for most of my projects. Knowledge of: Nuxt, VueX, Vue Router, Vue Loader, Vue Devtools, Vuetify...',
+        description: 'Main tool for most of my projects. Knowledge of: Nuxt, VueX, Vue Router, Vue Devtools, Vuetify...',
         id: 'vue',
         class: 'left-skill',
         imgUrl: 'vue-logo',
@@ -71,29 +71,29 @@ export default {
         isDevelopped: false,
       }, {
         name: 'HTML/SCSS',
-        description: 'Styling contents with SASS, GSAP / ScrollMagic animations. Also familiar with Tailwind.css',
+        description: 'Styling contents with SASS, GSAP / ScrollMagic animations. Familiar with Tailwind.css',
         id: 'html',
         class: 'left-skill',
         imgUrl: 'html-logo',
         isDevelopped: false,
       }, {
         name: 'Testing',
-        description: 'E2E testing with Cypress, unit-tests with Jest',
+        description: 'Testing of application through E2E tests with Cypress, and unit-tests with Jest',
         id: 'testing',
         class: 'right-skill',
         imgUrl: 'cypress-logo',
         isDevelopped: false,
       }, {
         name: 'UI toolkits',
-        description: 'I can create all components and styles from scratch but I also know toolkits such as Bootstrap, Material Design, Bulma, Element UI...',
+        description: 'Knowledge of toolkits such as Bootstrap, Material Design, Bulma, Element UI...',
         id: 'ui',
         class: 'left-skill',
         imgUrl: 'element-ui-logo',
         isDevelopped: false,
       }, {
         name: 'Back-end',
-        description: 'Even though I specialize in front-end developement, I can create server-side features like databases, authentication, payments etc. on Firebase or Strapi.',
-        id: 'api',
+        description: 'Creation of server-side features like databases, authentication, payments etc. on Firebase or Strapi.',
+        id: 'backEnd',
         class: 'right-skill',
         imgUrl: 'firebase-logo',
         isDevelopped: false,

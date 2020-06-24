@@ -91,10 +91,27 @@ export default {
           color: primaryColor,
           duration: 0.4,
         });
-        gsap.to(`#${skillId}`, {
-          margin: '15px 0',
-          duration: 0.4,
-        });
+        if (this.skill.id === 'vue') {
+          gsap.to(`#${skillId}`, {
+            'margin-top': '15px',
+            'margin-bottom': '75px',
+            'margin-left': 0,
+            'margin-right': 0,
+            duration: 0.4,
+          });
+        } else if (this.skill.id === 'backEnd') {
+          gsap.to(`#${skillId}`, {
+            'margin-top': '75px',
+            'margin-left': 0,
+            'margin-right': 0,
+            duration: 0.4,
+          });
+        } else {
+          gsap.to(`#${skillId}`, {
+            margin: '75px 0',
+            duration: 0.4,
+          });
+        }
       }
     },
     hoverSkill() {
@@ -226,50 +243,9 @@ export default {
       white-space: nowrap;
     }
 
-    @screen sm {
-      h3 {
-        font-size: 24px;
-      }
-    }
-
-    @screen xs {
-      h3 {
-        font-size: 22px;
-      }
-    }
-
-    @screen xxs {
-      h3 {
-        font-size: 18px;
-      }
-    }
-
-    .hovered-title {
-      color: theme('colors.primary') !important;
-    }
-
     .description {
       font-size: 1.1em;
       margin-top: 10px;
-    }
-
-    @screen sm {
-      .description {
-        font-size: 16px;
-      }
-    }
-
-    @screen xs {
-      .description {
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-    }
-
-    @screen xxs {
-      .description {
-        font-size: 12px;
-      }
     }
   }
 
@@ -279,56 +255,8 @@ export default {
     height: 100px !important;
   }
 
-  @screen sm {
-    img {
-      height: 80px !important;
-    }
-
-    .img-ctn {
-      min-width: 80px;
-    }
-  }
-
-  @screen xs {
-    img {
-      height: 50px !important;
-    }
-
-    .img-ctn {
-      min-width: 50px;
-    }
-  }
-
   .img-margin-left {
     margin-left: 50px;
-  }
-
-  @screen md {
-    .img-margin-left {
-      margin-right: 50px;
-      margin-left: 0 !important;
-    }
-  }
-
-  @screen sm {
-    .img-margin-left {
-      margin-right: 50px;
-      margin-left: 0 !important;
-    }
-  }
-
-  @screen xs {
-    .img-margin-left {
-      margin-right: 30px;
-      margin-left: 0 !important;
-    }
-  }
-
-  @screen xxs {
-    .img-margin-left {
-      margin-right: 30px;
-      margin-left: 0 !important;
-    }
   }
 
   .img-margin-right {
@@ -336,179 +264,161 @@ export default {
   }
 }
 
-  @screen md {
-    .img-margin-right {
-      margin-left: 50px;
-      margin-right: 0 !important;
-    }
-  }
-
-  @screen sm {
-    .img-margin-right {
-      margin-left: 50px;
-      margin-right: 0 !important;
-    }
-  }
-
-  @screen xs {
-    .img-margin-right {
-      margin-left: 30px;
-      margin-right: 0 !important;
-    }
-  }
-
-  @screen xxs {
-    .img-margin-right {
-      margin-left: 30px;
-      margin-right: 0 !important;
-    }
-  }
 
 .left-skill {
   flex-direction: row !important;
-}
-
-@screen md {
-  .left-skill {
-    flex-direction: row-reverse !important;
-  }
-}
-
-@screen sm {
-  .left-skill {
-    flex-direction: row-reverse !important;
-  }
-}
-
-@screen xs {
-  .left-skill {
-    flex-direction: row-reverse !important;
-  }
-}
-
-@screen xxs {
-  .left-skill {
-    flex-direction: row-reverse !important;
-  }
+  margin-right: 55%;
 }
 
 .right-skill {
   flex-direction: row-reverse !important;
-  margin-left: 55% !important;
-}
-
-@screen md {
-  .right-skill {
-    flex-direction: row !important;
-  }
-}
-
-@screen sm {
-  .right-skill {
-    flex-direction: row !important;
-  }
-}
-
-@screen xs {
-  .right-skill {
-    flex-direction: row !important;
-  }
-}
-
-@screen xxs {
-  .right-skill {
-    flex-direction: row !important;
-  }
-}
-
-.hovered-skill.left-skill {
-  margin-left: 10%;
-}
-
-@media screen and (min-width: 1280px) and (max-width: 1400px) {
-  .hovered-skill.left-skill {
-    margin-left: 5%;
-  }
-}
-
-@screen lg {
-  .hovered-skill.left-skill {
-    margin-left: 0;
-  }
-}
-
-@screen md {
-  .hovered-skill.left-skill {
-    margin-left: 0;
-  }
-}
-
-@screen sm {
-  .hovered-skill.left-skill {
-    margin-left: 0;
-  }
-}
-
-@screen xs {
-  .hovered-skill.left-skill {
-    margin-left: 0;
-  }
-}
-
-@screen xxs {
-  .hovered-skill.left-skill {
-    margin-left: 0;
-  }
-}
-
-
-@screen sm {
-  .hovered-skill.right-skill {
-    margin-left: 30% !important;
-  }
-}
-
-@screen xs {
-  .hovered-skill.right-skill {
-    margin-left: 0 !important;
-  }
-}
-
-@screen xxs {
-  .hovered-skill.right-skill {
-    margin-left: 0 !important;
-  }
+  margin-left: 55%;
 }
 
 .hovered-skill {
-  width: 35%;
+  width: 45%;
 
   img {
     align-self: flex-start;
   }
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1400px) {
-  .hovered-skill {
-    width: 40%;
-  }
-}
+@screen xxs {
+  .skill-ctn .content {
+    h3 {
+      font-size: 18px;
+    }
 
-@screen lg {
-  .hovered-skill {
-    width: 50%;
+    .description {
+      font-size: 12px;
+    }
   }
-}
 
-@screen md {
+  .img-margin-left {
+    margin-right: 30px;
+    margin-left: 0 !important;
+  }
+
+  .img-margin-right {
+    margin-left: 30px;
+    margin-right: 0 !important;
+  }
+
+  .left-skill {
+    flex-direction: row-reverse !important;
+  }
+
+  .right-skill {
+    flex-direction: row !important;
+  }
+
   .hovered-skill {
     border: unset;
+    margin: 10px 0;
+    width: 100%;
     padding: 0;
-    width: 50%;
+  }
+}
+
+@screen xs {
+  .skill-ctn {
+    width: 100%;
+    position: relative;
+
+    .content {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      h3 {
+        font-size: 22px;
+      }
+
+      .description {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .img-ctn {
+      min-width: 50px;
+
+      img {
+        height: 50px !important;
+      }
+    }
+  }
+
+  .img-margin-left {
+    margin-right: 30px;
+    margin-left: 0 !important;
+  }
+
+  .img-margin-right {
+    margin-left: 30px;
+    margin-right: 0 !important;
+  }
+
+  .left-skill {
+    flex-direction: row-reverse !important;
+  }
+
+  .right-skill {
+    flex-direction: row !important;
+    margin-left: 0;
+  }
+
+  .hovered-skill {
+    border: unset;
+    margin: 10px 0;
+    width: 100%;
+    padding: 0;
+
+    .content {
+      width: 50%;
+    }
   }
 }
 
 @screen sm {
+  .skill-ctn {
+    .content {
+      h3 {
+        font-size: 24px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+    }
+
+    .img-ctn {
+      min-width: 80px;
+
+      img {
+        height: 80px !important;
+      }
+    }
+  }
+
+  .img-margin-left {
+    margin-right: 50px;
+    margin-left: 0 !important;
+  }
+
+  .img-margin-right {
+    margin-left: 50px;
+    margin-right: 0 !important;
+  }
+
+  .left-skill {
+    flex-direction: row-reverse !important;
+  }
+
+  .right-skill {
+    flex-direction: row !important;
+  }
+
   .hovered-skill {
     border: unset;
     margin: 10px 0;
@@ -517,21 +427,79 @@ export default {
   }
 }
 
-@screen xs {
+@screen md {
+  .skill-ctn {
+    width: 100%;
+    position: relative;
+
+    .content {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      h3 {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 17px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .img-ctn {
+      min-width: 50px;
+
+      img {
+        height: 80px !important;
+      }
+    }
+  }
+
+  .img-margin-left {
+    margin-right: 30px;
+    margin-left: 0 !important;
+  }
+
+  .img-margin-right {
+    margin-left: 30px;
+    margin-right: 0 !important;
+  }
+
+  .left-skill {
+    flex-direction: row-reverse !important;
+  }
+
+  .right-skill {
+    flex-direction: row !important;
+    margin-left: 0;
+  }
+
   .hovered-skill {
     border: unset;
     margin: 10px 0;
     width: 100%;
     padding: 0;
+
+    .content {
+      width: 55%;
+    }
   }
 }
 
-@screen xxs {
+@screen lg {
   .hovered-skill {
-    border: unset;
-    margin: 10px 0;
-    width: 100%;
-    padding: 0;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+  .hovered-skill {
+    // width: 45%;
+
+    .left-skill {
+      margin-left: 5%;
+    }
   }
 }
 </style>
