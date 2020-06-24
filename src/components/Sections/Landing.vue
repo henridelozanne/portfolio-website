@@ -302,9 +302,15 @@ section {
         }
       }
 
-      @screen xxs {
+      @screen 374 {
         img {
           height: 38px;
+        }
+      }
+
+      @screen xxs {
+        img {
+          height: 35px;
         }
       }
     }
