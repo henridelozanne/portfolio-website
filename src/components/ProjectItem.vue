@@ -4,7 +4,7 @@
        @mouseleave="toggleHoveredProject">
       <div class="img-ctn">
         <img :src="mainImageSrc" :alt="mainImageAlt" class="project-thumb">
-        <div :id="`${project.id}-hovered`" class="hovered-project" v-show="hoveredProject">
+        <div :id="`${project.id}-hovered`" class="hovered-project">
             <span @click="toggleVisibleDetail" :id="`${project.id}-detail`"
                   @mouseenter="mouseEnterDetail"
                   @mouseleave="mouseLeaveDetail">See more details</span>
@@ -54,14 +54,14 @@ export default {
     },
     mouseEnterDetail() {
       gsap.to(`#${this.project.id}-detail`, {
-        background: '#353535',
+        background: 'rgba(120, 120, 120, .35)',
         color: 'white',
         duration: 0.35,
       });
     },
     mouseLeaveDetail() {
       gsap.to(`#${this.project.id}-detail`, {
-        background: 'transparent',
+        background: 'rgba(0, 0, 0, 0)',
         color: '#FDF6F6',
         duration: 0.35,
       });
@@ -81,7 +81,7 @@ export default {
       } else {
         gsap.to(`#${this.project.id}-hovered`, {
           opacity: 0,
-          duration: 0.35,
+          duration: 0.55,
         });
       }
     },
@@ -156,11 +156,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    // background: rgba(0,0,0,.6);
-    // border-radius: 7px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+    display: none;
 
     span {
         color: theme('colors.custom-white');
@@ -168,11 +164,6 @@ export default {
         border-radius: 7px;
         padding: 5px 10px;
         cursor: pointer;
-
-        &:hover {
-            // background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-            // color: white;
-        }
     }
 }
 
