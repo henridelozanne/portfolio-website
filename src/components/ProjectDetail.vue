@@ -497,5 +497,6 @@ export default {
 
 .feedback {
   font-style: italic;
+  padding-bottom: 23vh;
 }
 </style>
