@@ -50,7 +50,7 @@ export default {
           name: 'L\'Artisan du deux-roues',
           description: 'Website creation for a motorcycle and scooter repair shop in Paris.',
           stack: 'Vue.js, GSAP, SCSS, JavaScript, EmailJs',
-          feedback: '"Henri a su faire preuve de patience et de professionnalisme en comprenant notre besoin, et à su faire preuve de pédagogie envers mon associé et moi qui n\'y connaissons rien en Web développement. Sa réactivité et son dynamisme nous on permis de mettre en ligne notre site Web dans le temps imparti qui était assez serré. Je recommande donc vivement Henri qui a su nous rendre un site hautement qualitatif, et au-dessus de nos attentes."',
+          feedback: '"Henri a su faire preuve de patience et de professionnalisme en comprenant notre besoin, et a su faire preuve de pédagogie envers mon associé et moi qui n\'y connaissons rien en Web développement. Sa réactivité et son dynamisme nous on permis de mettre en ligne notre site Web dans le temps imparti qui était assez serré. Je recommande donc vivement Henri qui a su nous rendre un site hautement qualitatif, et au-dessus de nos attentes."',
           link: {
             display: 'www.lartisandudeuxroues.com',
             href: 'https://lartisandudeuxroues.com/',
