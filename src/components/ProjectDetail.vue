@@ -61,7 +61,10 @@
                   </span>
                 </div>
                 <div class="list-content">
-                  <a :href="project.link.href" target="_blank">{{ project.link.display }}</a>
+                  <a v-if="!project.link.deadLink" :href="project.link.href" target="_blank">
+                    {{ project.link.display }}
+                  </a>
+                  <span v-else>Not online anymore.</span>
                 </div>
               </li>
               <li v-if="project.feedback">

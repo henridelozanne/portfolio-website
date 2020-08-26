@@ -46,6 +46,32 @@ export default {
     return {
       projects: [
         {
+          id: 'trentesec',
+          name: 'Big Mamma - 30sec',
+          description: 'Creation of a series of integration tests for the new payment application of Big Mamma Group: 30sec.fr. Secured this web-app with a set of Cypress tests. Set-up of the test environment in a Gitlab CI. Used AppliTools to run the tests with a responsive approach, testing the app on various browsers and OS.',
+          stack: 'Cypress.io, AppliTools',
+          feedback: '"Super mission en remote pour la mise en place d\'un environnement de test à base de Cypress dans une CI Gitlab. Je recommande !"',
+          link: {
+            display: 'www.30sec.fr',
+            href: 'https://30sec.fr/',
+          },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1598444386/portfolio-website/projects/30sec/Capture_d_e%CC%81cran_2020-08-26_a%CC%80_14.18.48.png',
+              alt: '30sec-example-payment',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1598444386/portfolio-website/projects/30sec/Capture_d_e%CC%81cran_2020-08-26_a%CC%80_14.18.00.png',
+              alt: '30sec-main-img',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1598444386/portfolio-website/projects/30sec/Capture_d_e%CC%81cran_2020-08-26_a%CC%80_14.03.56.png',
+              alt: '30sec-main-smartphone',
+            },
+          ],
+        },
+        {
           id: 'artisan',
           name: 'L\'Artisan du deux-roues',
           description: 'Website creation for a motorcycle and scooter repair shop in Paris.',
@@ -131,8 +157,7 @@ export default {
           stack: 'Vue.js, JavaScript, HTML, SCSS, Tailwind.css',
           feedback: '"Plus que satisfait par le travail fourni par Henri pour la réalisation de mon site web de photographie. Henri a été à l’écoute tout au long du projet et réactif dès que je lui demandais de faire des modifications et des ajustements. Henri n’a pas fait que suivre mes instructions, il a également été force de proposition et m’a donné bon nombre d’idées auxquelles je n’avais pas pensé. Je retravaillerai avec Henri dès que je déciderai de transformer mon site web en boutique en ligne. Encore merci à toi Henri!"',
           link: {
-            display: 'www.charlesmichel-photography.com',
-            href: 'https://charlesmichel-photography.com/',
+            deadLink: true,
           },
           images: [
             {
