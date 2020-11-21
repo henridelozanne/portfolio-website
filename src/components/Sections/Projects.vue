@@ -46,6 +46,58 @@ export default {
     return {
       projects: [
         {
+          id: 'xplo',
+          name: 'Xplo',
+          description: 'Creation of the front-end of Xplo from scratch. Along this project I developped a Leaflet map with complex features and high-level of user interaction. I linked the front to a custom API via Axios. I created all the front-end features with JS and Vue. I collaborated as well on the integration of responsive designs and on transitions and animations',
+          stack: 'Vue.js, Google Maps Places API, Moment.js, Geolocation, VueX, VueRouter, Vue-Snotify, Element-UI, Popper.js, Vue-Slick-Carousel, Sass, Axios',
+          feedback: '"Henri Delozanne a mené de manière très efficace le développement front de l\'application web Xplo (secteur du tourisme). Son travail a été apprécié par les différents intervenants, dont la communauté d\'agglomération de Paris-Saclay. Son profil lui permet de bien comprendre le besoin et de trouver des solutions techniques pertinentes."',
+          link: {
+            display: 'www.xplo.fr (not online yet)',
+            href: 'https://xplo.fr/',
+          },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1605894910/portfolio-website/projects/Xplo/Capture_d_e%CC%81cran_2020-11-20_a%CC%80_13.55.30.png',
+              alt: 'xplo-signup',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1605894890/portfolio-website/projects/Xplo/Capture_d_e%CC%81cran_2020-11-20_a%CC%80_13.57.47.png',
+              alt: 'xplo-main-page',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1605894953/portfolio-website/projects/Xplo/Capture_d_e%CC%81cran_2020-11-20_a%CC%80_13.56.02.png',
+              alt: 'xplo-add-image',
+            },
+          ],
+        },
+        {
+          id: 'medissimo',
+          name: 'Medissimo | Stats dashboard',
+          description: 'Development of a statistics dashboard for the clients of the company, in the pharmaceutical sector. I created various charts (line charts, column charts and pie charts) via AmCharts, and a series of custom tables via Element-UI. After creating all the templates, I linked the front to the API to retrieve dynamic data.',
+          stack: 'Vue.js, AmCharts, Element-UI, Sass',
+          feedback: '"Très à l\'écoute et toujours disponible, Henri a su avancer dans un planning très serré et nous a aidé à faire face à des difficultés de dernière minute."',
+          link: {
+            display: 'www.medissimo.fr',
+            href: 'https://medissimo.fr/',
+          },
+          images: [
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1605792026/portfolio-website/projects/Medissimo/Capture_d_e%CC%81cran_2020-11-19_a%CC%80_14.17.08.png',
+              alt: 'medissimo-activity-indicators',
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1605792026/portfolio-website/projects/Medissimo/Capture_d_e%CC%81cran_2020-11-19_a%CC%80_14.06.05.png',
+              alt: 'medissimo-main-charts',
+              main: true,
+            },
+            {
+              src: 'https://res.cloudinary.com/dcirj0x5j/image/upload/v1605792026/portfolio-website/projects/Medissimo/Capture_d_e%CC%81cran_2020-11-19_a%CC%80_14.07.10.png',
+              alt: 'medissimo-table',
+            },
+          ],
+        },
+        {
           id: 'trentesec',
           name: 'Big Mamma - 30sec',
           description: 'Creation of a series of integration tests for the new payment application of Big Mamma Group: 30sec.fr. Secured this web-app with a set of Cypress tests. Set-up of the test environment in a Gitlab CI. Used AppliTools to run the tests with a responsive approach, testing the app on various browsers and OS.',
