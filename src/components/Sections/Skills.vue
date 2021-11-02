@@ -91,11 +91,11 @@ export default {
         imgUrl: 'element-ui-logo',
         isDevelopped: false,
       }, {
-        name: 'Back-end',
-        description: 'Creation of server-side features like databases, authentication, payments etc. on Firebase or Strapi.',
-        id: 'backEnd',
+        name: 'Git',
+        description: 'Daily use of git operations, via the command line or platforms like Github, Gitlab etc.',
+        id: 'git',
         class: 'right-skill',
-        imgUrl: 'firebase-logo',
+        imgUrl: 'git-logo',
         isDevelopped: false,
       }],
     };
