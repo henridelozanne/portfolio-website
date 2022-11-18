@@ -51,29 +51,34 @@ export default {
           id: "lpi",
           name: "Learning Planet Institute",
           description:
-            "Frontend development of a web-application in the education sector, for the Learning Planet Institute.",
+            "Frontend development of a web-application in the education sector during a one year mission. Within a team with SCRUM methodology, I developped new features and solved bugs, implemented a new design system and integrated responsive designs.",
           team: true,
-          stack: "Vue.js 3, TypeScript, VueX, VueRouter, Google Dialogflow, PrimeFaces, Sass",
+          stack: "Vue.js, JavaScript, Jest, Storybook, Sass",
           link: {
-            display: "www.stack-labs.com",
-            href: "https://stack-labs.com/"
+            display: "LPI's Projects website",
+            href: "https://projects.directory/dashboard"
           },
           images: [
             {
               src:
-                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1635860804/portfolio-website/projects/shlmr/dossiers-en-inst.jpg",
-              alt: "dossiers-en-instruction",
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1668784004/portfolio-website/projects/lpi/Capture_d_e%CC%81cran_2022-11-18_a%CC%80_15.59.53.png",
+              alt: "home",
               main: true
             },
             {
               src:
-                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1635860804/portfolio-website/projects/shlmr/demande.jpg",
-              alt: "demande"
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1668784006/portfolio-website/projects/lpi/Capture_d_e%CC%81cran_2022-11-18_a%CC%80_16.01.43.png",
+              alt: "project"
             },
             {
               src:
-                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1635860804/portfolio-website/projects/shlmr/pie%CC%80ces-justificatives.jpg",
-              alt: "pieces-justificatives"
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1668784005/portfolio-website/projects/lpi/Capture_d_e%CC%81cran_2022-11-18_a%CC%80_16.02.17.png",
+              alt: "onboarding"
+            },
+            {
+              src:
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1668784005/portfolio-website/projects/lpi/Capture_d_e%CC%81cran_2022-11-18_a%CC%80_16.03.41.png",
+              alt: "category"
             }
           ]
         },
@@ -81,7 +86,7 @@ export default {
           id: "stack",
           name: "Stack Labs / SHLMR",
           description:
-            "I worked with Stack-Labs during 9 monthes for their client SHLMR, the organization in charge of social housing in Reunion Island. I helped building the web-application used today by SHLMR agents to attribute accommodations to the most pertinent candidates.",
+            "I worked with Stack-Labs during 9 months for their client SHLMR, the organization in charge of social housing in Reunion Island. I helped building the web-application used today by SHLMR agents to attribute accommodations to the most pertinent candidates.",
           team: true,
           stack: "Vue.js 3, TypeScript, VueX, VueRouter, Google Dialogflow, PrimeFaces, Sass",
           link: {
