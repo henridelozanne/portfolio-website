@@ -1,19 +1,18 @@
 <template>
-  <div class="notification shadow"
-       :class="notifType === 'success' ? 'success' : 'error'">
-    <img v-if="notifType === 'success'" src="../assets/success.png" alt="error-img">
-    <img v-else-if="notifType === 'error'" src="../assets/error.png" alt="error-img">
-    <div class="content">{{message}}</div>
+  <div class="notification shadow" :class="notifType === 'success' ? 'success' : 'error'">
+    <img v-if="notifType === 'success'" src="../assets/success.png" alt="error-img" />
+    <img v-else-if="notifType === 'error'" src="../assets/error.png" alt="error-img" />
+    <div class="content">{{ message }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Notification',
+  name: "Notification",
   props: {
-    notifType: { type: String, default: '' },
-    message: { type: String, default: '' },
-  },
+    notifType: { type: String, default: "" },
+    message: { type: String, default: "" }
+  }
 };
 </script>
 
@@ -30,8 +29,8 @@ export default {
   z-index: 2;
 
   img {
-      width: 25px;
-      margin-right: 1em;
+    width: 25px;
+    margin-right: 1em;
   }
 
   .content {
@@ -41,13 +40,13 @@ export default {
 }
 
 .success {
-  background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
-  border: 1px solid theme('colors.secondary');
+  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  border: 1px solid theme("colors.secondary");
 }
 
 .error {
-  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%),
-  radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+  background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+    radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
   border: 1px solid #d75a4a;
 }
 </style>

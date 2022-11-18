@@ -4,86 +4,118 @@
 
     <div class="form-ctn">
       <form v-on:submit.prevent>
-        <input placeholder="Name *" type="text" class="shadow"
-               @blur="onBlur('name')" v-model="name">
+        <input
+          placeholder="Name *"
+          type="text"
+          class="shadow"
+          @blur="onBlur('name')"
+          v-model="name"
+        />
         <span class="error-msg" v-if="error.name">Name is a required field.</span>
-        <input placeholder="Email *" type="text" class="shadow"
-               @blur="onBlur('email')" v-model="email">
+        <input
+          placeholder="Email *"
+          type="text"
+          class="shadow"
+          @blur="onBlur('email')"
+          v-model="email"
+        />
         <span class="error-msg" v-if="error.emailRequired">Email is a required field.</span>
         <span class="error-msg" v-else-if="error.emailIncorrect">
           The email format is incorrect.
         </span>
-        <input placeholder="Subject" type="text" class="shadow"
-               @blur="onBlur('subject')" v-model="subject">
-        <textarea name="" id="" cols="30" rows="10" placeholder="Message *"
-                  @blur="onBlur('message')" v-model="message" class="shadow"></textarea>
+        <input
+          placeholder="Subject"
+          type="text"
+          class="shadow"
+          @blur="onBlur('subject')"
+          v-model="subject"
+        />
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Message *"
+          @blur="onBlur('message')"
+          v-model="message"
+          class="shadow"
+        ></textarea>
         <span class="error-msg" v-if="error.message">Message is a required field.</span>
-        <button class="send-button" @click="sendMail" @mouseenter="mouseEnterSendBtn"
-                @mouseleave="mouseLeaveSendBtn">Send</button>
+        <button
+          class="send-button"
+          @click="sendMail"
+          @mouseenter="mouseEnterSendBtn"
+          @mouseleave="mouseLeaveSendBtn"
+        >
+          Send
+        </button>
       </form>
     </div>
     <div class="linkedin-ctn">
       <a href="https://www.linkedin.com/in/henridelozanne/" target="_blank">
-        <img class="linkedin-img" src="../../assets/linkedin-logo.png" alt="linkedin-logo">
+        <img class="linkedin-img" src="../../assets/linkedin-logo.png" alt="linkedin-logo" />
       </a>
     </div>
-    <notification v-if="notificationIsVisible"
-    :message="notifMessage" :notifType="notifType"/>
+    <notification v-if="notificationIsVisible" :message="notifMessage" :notifType="notifType" />
   </section>
 </template>
 
 <script>
-import emailjs from 'emailjs-com';
-import gsap from 'gsap';
-import ScrollMagic from 'scrollmagic';
-import SectionTitle from '../SectionTitle.vue';
-import Notification from '../Notification.vue';
+import emailjs from "emailjs-com";
+import gsap from "gsap";
+import ScrollMagic from "scrollmagic";
+import SectionTitle from "../SectionTitle.vue";
+import Notification from "../Notification.vue";
 
 export default {
-  name: 'Contact',
+  name: "Contact",
   components: {
-    'section-title': SectionTitle,
-    notification: Notification,
+    "section-title": SectionTitle,
+    notification: Notification
   },
   data() {
     return {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-      notifMessage: 'Please fill in all required fields before sending.',
-      notifType: '',
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      notifMessage: "Please fill in all required fields before sending.",
+      notifType: "",
       notificationIsVisible: false,
       error: {
         name: false,
         emailRequired: false,
         emailIncorrect: false,
-        message: false,
+        message: false
       },
-      impossibleToSendMail: false,
+      impossibleToSendMail: false
     };
   },
   mounted() {
     const contactTimeline = gsap.timeline();
-    contactTimeline.from('.form-ctn', {
+    contactTimeline.from(".form-ctn", {
       duration: 1,
       y: 150,
       opacity: 0,
-      ease: 'slow',
-      stagger: 0.3,
+      ease: "slow",
+      stagger: 0.3
     });
-    contactTimeline.from('.linkedin-ctn', {
-      duration: 0.9,
-      y: -50,
-      opacity: 0,
-      ease: 'slow',
-      stagger: 0.3,
-    }, '<');
+    contactTimeline.from(
+      ".linkedin-ctn",
+      {
+        duration: 0.9,
+        y: -50,
+        opacity: 0,
+        ease: "slow",
+        stagger: 0.3
+      },
+      "<"
+    );
 
     const controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
-      triggerElement: '.contact-section',
-      triggerHook: 0.5,
+      triggerElement: ".contact-section",
+      triggerHook: 0.5
     })
       .setTween(contactTimeline)
       .reverse(true)
@@ -92,85 +124,88 @@ export default {
   methods: {
     onBlur(input) {
       switch (input) {
-        case 'name':
+        case "name":
           this.validateName();
           break;
-        case 'email':
+        case "email":
           this.validateEmail();
           break;
-        case 'message':
+        case "message":
           this.validateMessage();
           break;
         // eslint-disable-next-line
-        default: () => {};
+        default:
+          () => {};
       }
     },
     resetFields() {
-      this.name = '';
-      this.email = '';
-      this.subject = '';
-      this.message = '';
+      this.name = "";
+      this.email = "";
+      this.subject = "";
+      this.message = "";
     },
     mouseEnterSendBtn() {
-      gsap.to('.send-button', {
-        'background-image': 'linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)',
-        color: '#388186',
+      gsap.to(".send-button", {
+        "background-image": "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
+        color: "#388186"
       });
     },
     mouseLeaveSendBtn() {
-      gsap.to('.send-button', {
-        color: 'white',
-        background: '#388186',
+      gsap.to(".send-button", {
+        color: "white",
+        background: "#388186"
       });
     },
     sendMail() {
       this.validateEmail();
       this.validateMessage();
       this.validateName();
-      const noErrors = Object.values(this.error).every((item) => item === false);
+      const noErrors = Object.values(this.error).every(item => item === false);
       if (noErrors) {
         const templateParams = {
           name: this.name,
           subject: this.subject,
           message: this.message,
-          email: this.email,
+          email: this.email
         };
         emailjs
-          .send('default_service',
-            'personnal_portfolio',
+          .send(
+            "default_service",
+            "personnal_portfolio",
             templateParams,
-            'user_budaC2tozA2cUUxQ2SI7M')
+            "user_budaC2tozA2cUUxQ2SI7M"
+          )
           .then(() => {
             this.resetFields();
-            this.notifMessage = 'Message sent ! Thanks for reaching out';
-            this.notifType = 'success';
+            this.notifMessage = "Message sent ! Thanks for reaching out";
+            this.notifType = "success";
             this.notificationIsVisible = true;
             setTimeout(() => {
               this.notificationIsVisible = false;
-              this.notifMessage = '';
-              this.notifType = '';
+              this.notifMessage = "";
+              this.notifType = "";
             }, 3000);
           })
           .catch(() => {
-            this.notifMessage = 'An error occured, please try again later';
-            this.notifType = 'error';
+            this.notifMessage = "An error occured, please try again later";
+            this.notifType = "error";
             this.notificationIsVisible = true;
             setTimeout(() => {
               this.notificationIsVisible = false;
-              this.notifMessage = '';
-              this.notifType = '';
+              this.notifMessage = "";
+              this.notifType = "";
             }, 3000);
           });
       } else this.showImpossibleToSendMail();
     },
     showImpossibleToSendMail() {
-      this.notifMessage = 'Please fill in all required fields before sending.';
-      this.notifType = 'error';
+      this.notifMessage = "Please fill in all required fields before sending.";
+      this.notifType = "error";
       this.notificationIsVisible = true;
       setTimeout(() => {
         this.notificationIsVisible = false;
-        this.notifMessage = '';
-        this.notifType = '';
+        this.notifMessage = "";
+        this.notifType = "";
       }, 3000);
     },
     validateEmail() {
@@ -192,14 +227,14 @@ export default {
       if (!this.name) {
         this.error.name = true;
       } else this.error.name = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
 section {
-  background: theme('colors.custom-grey');
+  background: theme("colors.custom-grey");
   display: flex;
   flex-flow: column;
   position: relative;
@@ -217,14 +252,15 @@ form {
   flex-direction: column;
   width: 550px;
 
-  input, textarea {
-    border: 1px solid theme('colors.custom-grey-dark');
+  input,
+  textarea {
+    border: 1px solid theme("colors.custom-grey-dark");
     width: 100%;
     font-size: 0.8em;
     outline: none;
 
     &:focus {
-      border: 1px solid theme('colors.secondary');
+      border: 1px solid theme("colors.secondary");
     }
   }
 
@@ -246,11 +282,11 @@ form {
 
   .send-button {
     color: white;
-    background: theme('colors.secondary');
+    background: theme("colors.secondary");
     align-self: flex-end;
     margin-top: 20px;
     padding: 5px 20px;
-    font-size: .9em;
+    font-size: 0.9em;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
   }
 }

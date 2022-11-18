@@ -5,50 +5,66 @@
         Hi. I’m Henri, a front-end developer from Paris. Please take a look around!
       </h1>
       <div class="presentation-detail">
-        Imagine transforming your ideas into an innovative and tailor-made website! <br>
-         Passionate about programming, I can help you concretizing
-          your concept into a digital solution with flexibility and adaptation to your
-           workflow. <br><div class="lets-build">Let’s build something great together!</div>
+        Imagine transforming your ideas into an innovative and tailor-made website! <br />
+        Passionate about programming, I can help you concretizing your concept into a digital
+        solution with flexibility and adaptation to your workflow. <br />
+        <div class="lets-build">Let’s build something great together!</div>
       </div>
     </div>
     <div class="competences-ctn">
-      <div class="first"
-           @mouseenter="mouseEnter('.first-img')"
-           @mouseleave="mouseLeave('.first-img')">
+      <div
+        class="first"
+        @mouseenter="mouseEnter('.first-img')"
+        @mouseleave="mouseLeave('.first-img')"
+      >
         <div class="img-ctn">
-          <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/pixel-perfect.png"
-               alt="pixel-perfect-code img"
-               class="first-img">
+          <img
+            src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/pixel-perfect.png"
+            alt="pixel-perfect-code img"
+            class="first-img"
+          />
         </div>
         <p class="competence-label">Pixel perfect code</p>
       </div>
-      <div class="second"
-           @mouseenter="mouseEnter('.second-img')"
-           @mouseleave="mouseLeave('.second-img')">
+      <div
+        class="second"
+        @mouseenter="mouseEnter('.second-img')"
+        @mouseleave="mouseLeave('.second-img')"
+      >
         <div class="img-ctn">
-          <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/responsive.png"
-               alt="responsive-design-img"
-               class="second-img">
+          <img
+            src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/responsive.png"
+            alt="responsive-design-img"
+            class="second-img"
+          />
         </div>
         <p class="competence-label">Responsive design</p>
       </div>
-      <div class="third"
-           @mouseenter="mouseEnter('.third-img')"
-           @mouseleave="mouseLeave('.third-img')">
+      <div
+        class="third"
+        @mouseenter="mouseEnter('.third-img')"
+        @mouseleave="mouseLeave('.third-img')"
+      >
         <div class="img-ctn">
-          <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/performance.png"
-               alt="performance-oriented img"
-               class="third-img">
+          <img
+            src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/performance.png"
+            alt="performance-oriented img"
+            class="third-img"
+          />
         </div>
         <p class="competence-label">Performance oriented</p>
       </div>
-      <div class="fourth"
-           @mouseenter="mouseEnter('.fourth-img')"
-           @mouseleave="mouseLeave('.fourth-img')">
+      <div
+        class="fourth"
+        @mouseenter="mouseEnter('.fourth-img')"
+        @mouseleave="mouseLeave('.fourth-img')"
+      >
         <div class="img-ctn">
-          <img src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/user-experience.png"
-               alt="ux-driven-development img"
-               class="fourth-img">
+          <img
+            src="https://res.cloudinary.com/dcirj0x5j/image/upload/v1587576027/portfolio-website/Landing/user-experience.png"
+            alt="ux-driven-development img"
+            class="fourth-img"
+          />
         </div>
         <p class="competence-label">UX driven development</p>
       </div>
@@ -57,12 +73,12 @@
 </template>
 
 <script>
-import gsap from 'gsap';
+import gsap from "gsap";
 
 const masterTL = gsap.timeline();
 
 export default {
-  name: 'Landing',
+  name: "Landing",
   mounted() {
     masterTL.add(this.textTL());
     masterTL.add(this.skillsTL());
@@ -71,62 +87,73 @@ export default {
   data() {
     return {
       hovered: {
-        'pixel-perfect': false,
+        "pixel-perfect": false,
         responsive: false,
         performance: false,
-        ux: false,
-      },
+        ux: false
+      }
     };
   },
   methods: {
     textTL() {
       const tl = gsap.timeline({ defaults: { duration: 1 } });
-      tl.from('.presentation-header', {
+      tl.from(".presentation-header", {
         duration: 1,
         x: -200,
         opacity: 0,
-        ease: 'slow(0.7, 0.7, false)',
+        ease: "slow(0.7, 0.7, false)"
       });
-      tl.from('.presentation-detail', {
-        duration: 1.2,
-        x: 100,
-        opacity: 0,
-        ease: 'slow(0.7, 0.7, false)',
-      }, '=-.2');
+      tl.from(
+        ".presentation-detail",
+        {
+          duration: 1.2,
+          x: 100,
+          opacity: 0,
+          ease: "slow(0.7, 0.7, false)"
+        },
+        "=-.2"
+      );
       return tl;
     },
     mouseEnter(img) {
-      gsap.fromTo(img,
-        { filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)' },
+      gsap.fromTo(
+        img,
         {
-          filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)',
-          duration: 0.7,
-        });
+          filter:
+            "invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)"
+        },
+        {
+          filter:
+            "invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)",
+          duration: 0.7
+        }
+      );
     },
     mouseLeave(img) {
       gsap.to(img, {
         duration: 0.7,
-        filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)',
+        filter:
+          "invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)"
       });
     },
     skillsTL() {
-      const tl = gsap.timeline({ defaults: { duration: 0.8, ease: 'power2.out' }, delay: 0.2 });
-      tl.from('.first', { opacity: 0, y: 50 });
-      tl.from('.second', { opacity: 0, y: 50 }, '<.2');
-      tl.from('.third', { opacity: 0, y: 50 }, '<.2');
-      tl.from('.fourth', { opacity: 0, y: 50 }, '<.2');
+      const tl = gsap.timeline({ defaults: { duration: 0.8, ease: "power2.out" }, delay: 0.2 });
+      tl.from(".first", { opacity: 0, y: 50 });
+      tl.from(".second", { opacity: 0, y: 50 }, "<.2");
+      tl.from(".third", { opacity: 0, y: 50 }, "<.2");
+      tl.from(".fourth", { opacity: 0, y: 50 }, "<.2");
       return tl;
     },
     toggleHoveredImage(item) {
       this.hovered[item] = !this.hovered[item];
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
 section {
-  background: theme('colors.custom-black');
+  background: theme("colors.custom-black");
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -142,7 +169,7 @@ section {
   .presentation-header {
     width: 520px;
     margin: 0;
-    color: theme('colors.primary');
+    color: theme("colors.primary");
     font-weight: bold;
     font-size: 48px;
     text-align: right;
@@ -189,7 +216,7 @@ section {
   }
 
   .presentation-detail {
-    color: theme('colors.custom-white');
+    color: theme("colors.custom-white");
     width: 570px;
     font-weight: 600;
     font-size: 20px;
@@ -274,8 +301,8 @@ section {
 
       img {
         height: 115px;
-        filter: invert(46%) sepia(10%) saturate(2097%)
-        hue-rotate(135deg) brightness(94%) contrast(90%);
+        filter: invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%)
+          contrast(90%);
       }
 
       @screen lg {
@@ -316,7 +343,7 @@ section {
     }
 
     p {
-      color: theme('colors.custom-white');
+      color: theme("colors.custom-white");
       margin-top: 15px;
       text-align: center;
     }
@@ -351,8 +378,8 @@ section {
   .competences-ctn {
     display: grid;
     width: 100%;
-    grid-template-columns:  1fr 1fr;
-    grid-template-rows:  auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     grid-row-gap: 20px;
 
     .competence-label {

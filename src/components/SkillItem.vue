@@ -1,180 +1,217 @@
 <template>
-  <div class="skill-ctn"
-       :id="skill.id"
-       :class="[skill.class,
-                {'hovered-skill': skillIsHovered},
-                {'temp-width': tempWidthOn},
-                darkFilter ? 'dark-filter' : 'no-filter']"
-       @click="skillClicked" @mouseenter="hoverSkill"
-       @mouseleave="unhoverSkill">
+  <div
+    class="skill-ctn"
+    :id="skill.id"
+    :class="[
+      skill.class,
+      { 'hovered-skill': skillIsHovered },
+      { 'temp-width': tempWidthOn },
+      darkFilter ? 'dark-filter' : 'no-filter'
+    ]"
+    @click="skillClicked"
+    @mouseenter="hoverSkill"
+    @mouseleave="unhoverSkill"
+  >
     <div class="content">
       <h3 :id="`${skill.id}-title`">
-          {{skill.name}}
+        {{ skill.name }}
       </h3>
       <p v-show="skillIsHovered" :id="`${skill.id}-description`" class="description">
-        {{skill.description}}
+        {{ skill.description }}
       </p>
     </div>
-    <div class="img-ctn" :class="skill.class
-      === 'right-skill' ? 'img-margin-right' : 'img-margin-left'">
-      <img :src="`https://res.cloudinary.com/dcirj0x5j/image/upload/v1587571894/portfolio-website/Skills/${skill.imgUrl}.png`"
-         :alt="skill.imgUrl" :id="`${skill.id}-img`" :class="[{'hovered-img': skillIsHovered}]">
+    <div
+      class="img-ctn"
+      :class="skill.class === 'right-skill' ? 'img-margin-right' : 'img-margin-left'"
+    >
+      <img
+        :src="
+          `https://res.cloudinary.com/dcirj0x5j/image/upload/v1587571894/portfolio-website/Skills/${skill.imgUrl}.png`
+        "
+        :alt="skill.imgUrl"
+        :id="`${skill.id}-img`"
+        :class="[{ 'hovered-img': skillIsHovered }]"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import gsap from 'gsap';
+import gsap from "gsap";
 
 export default {
-  name: 'SkillItem',
+  name: "SkillItem",
   props: {
     skill: { type: Object, default: () => {} },
-    oneItemDevelopped: { type: Boolean, default: false },
+    oneItemDevelopped: { type: Boolean, default: false }
   },
   watch: {
     isDevelopped() {
       if (this.isDevelopped) {
         this.developSkill(this.skill.id);
       } else this.undevelopSkill(this.skill.id);
-    },
+    }
   },
   computed: {
     darkFilter() {
       return this.oneItemDevelopped && !this.isDevelopped;
-    },
+    }
   },
   methods: {
     developSkill(skillId) {
-      const primaryColor = '#A5E9E1';
-      const secondaryColor = '#388186';
+      const primaryColor = "#A5E9E1";
+      const secondaryColor = "#388186";
       this.skillIsHovered = true;
-      this.$emit('skillDevelop', { name: this.skill.name, isDevelopped: true });
+      this.$emit("skillDevelop", { name: this.skill.name, isDevelopped: true });
       // Large screens
       if (window.innerWidth >= 1024) {
-        gsap.fromTo(`#${skillId}-img`,
-          { filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)' },
+        gsap.fromTo(
+          `#${skillId}-img`,
           {
-            filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)',
-            duration: 0.7,
-          });
+            filter:
+              "invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)"
+          },
+          {
+            filter:
+              "invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)",
+            duration: 0.7
+          }
+        );
         gsap.to(`#${skillId}`, {
           border: `5px solid ${secondaryColor}`,
-          'border-radius': '15px',
-          padding: '20px',
-          duration: 0.5,
+          "border-radius": "15px",
+          padding: "20px",
+          duration: 0.5
         });
         gsap.from(`#${skillId}-description`, {
-          transform: 'scale(0.9, 0.9)',
+          transform: "scale(0.9, 0.9)",
           opacity: 0,
-          duration: 0.4,
+          duration: 0.4
         });
         gsap.to(`#${skillId}-title`, {
           color: primaryColor,
-          'text-decoration': 'none',
-          duration: 1,
+          "text-decoration": "none",
+          duration: 1
         });
       } else {
         // Small screens
-        gsap.fromTo(`#${skillId}-img`,
-          { filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)' },
+        gsap.fromTo(
+          `#${skillId}-img`,
           {
-            filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)',
-            duration: 0.7,
-          });
+            filter:
+              "invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)"
+          },
+          {
+            filter:
+              "invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)",
+            duration: 0.7
+          }
+        );
         gsap.from(`#${skillId}-description`, {
-          transform: 'scale(0.9, 0.9)',
+          transform: "scale(0.9, 0.9)",
           opacity: 0,
-          duration: 0.4,
+          duration: 0.4
         });
         gsap.to(`#${skillId}-title`, {
           color: primaryColor,
-          duration: 0.4,
+          duration: 0.4
         });
-        if (this.skill.id === 'vue') {
+        if (this.skill.id === "vue") {
           gsap.to(`#${skillId}`, {
-            'margin-top': '15px',
-            'margin-bottom': '75px',
-            'margin-left': 0,
-            'margin-right': 0,
-            duration: 0.4,
+            "margin-top": "15px",
+            "margin-bottom": "75px",
+            "margin-left": 0,
+            "margin-right": 0,
+            duration: 0.4
           });
-        } else if (this.skill.id === 'backEnd') {
+        } else if (this.skill.id === "backEnd") {
           gsap.to(`#${skillId}`, {
-            'margin-top': '75px',
-            'margin-left': 0,
-            'margin-right': 0,
-            duration: 0.4,
+            "margin-top": "75px",
+            "margin-left": 0,
+            "margin-right": 0,
+            duration: 0.4
           });
         } else {
           gsap.to(`#${skillId}`, {
-            margin: '75px 0',
-            duration: 0.4,
+            margin: "75px 0",
+            duration: 0.4
           });
         }
       }
     },
     hoverSkill() {
-      const primaryColor = '#A5E9E1';
+      const primaryColor = "#A5E9E1";
       if (!this.isDevelopped && !this.oneItemDevelopped) {
         gsap.to(`#${this.skill.id}-title`, {
           color: primaryColor,
-          'text-decoration': 'underline',
-          duration: 1,
+          "text-decoration": "underline",
+          duration: 1
         });
       }
     },
     unhoverSkill() {
-      const customWhite = '#FDF6F6';
+      const customWhite = "#FDF6F6";
       if (!this.isDevelopped && !this.oneItemDevelopped) {
-        this.$emit('skillDevelop', { name: this.skill.name, isDevelopped: false });
+        this.$emit("skillDevelop", { name: this.skill.name, isDevelopped: false });
         gsap.to(`#${this.skill.id}-title`, {
           color: customWhite,
-          'text-decoration': 'none',
-          duration: 1,
+          "text-decoration": "none",
+          duration: 1
         });
       }
     },
     undevelopSkill(skillId) {
-      const customWhite = '#FDF6F6';
+      const customWhite = "#FDF6F6";
       this.skillIsHovered = false;
-      this.$emit('skillDevelop', { name: this.skill.name, isDevelopped: false });
+      this.$emit("skillDevelop", { name: this.skill.name, isDevelopped: false });
       // Large screens
       if (window.innerWidth >= 1024) {
         this.tempWidthOn = true;
         setTimeout(() => {
           this.tempWidthOn = false;
         }, 1000);
-        gsap.fromTo(`#${skillId}-img`,
-          { filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)' },
+        gsap.fromTo(
+          `#${skillId}-img`,
           {
-            filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)',
-            duration: 0.7,
-          });
+            filter:
+              "invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)"
+          },
+          {
+            filter:
+              "invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)",
+            duration: 0.7
+          }
+        );
         gsap.to(`#${skillId}`, {
           border: 0,
           padding: 0,
-          duration: 0.5,
+          duration: 0.5
         });
         gsap.to(`#${skillId}-title`, {
           color: customWhite,
-          duration: 0.4,
+          duration: 0.4
         });
       } else {
         // Small screens
-        gsap.fromTo(`#${skillId}-img`,
-          { filter: 'invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)' },
+        gsap.fromTo(
+          `#${skillId}-img`,
           {
-            filter: 'invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)',
-            duration: 0.7,
-          });
+            filter:
+              "invert(96%) sepia(10%) saturate(1120%) hue-rotate(102deg) brightness(96%) contrast(90%)"
+          },
+          {
+            filter:
+              "invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%)",
+            duration: 0.7
+          }
+        );
         gsap.to(`#${skillId}-title`, {
           color: customWhite,
-          duration: 0.4,
+          duration: 0.4
         });
         gsap.to(`#${skillId}`, {
-          margin: '0',
-          duration: 0.4,
+          margin: "0",
+          duration: 0.4
         });
       }
     },
@@ -182,25 +219,25 @@ export default {
       const that = this;
       function handlerFunction() {
         that.isDevelopped = false;
-        document.removeEventListener('click', handlerFunction);
+        document.removeEventListener("click", handlerFunction);
       }
       this.isDevelopped = !this.isDevelopped;
       if (this.isDevelopped) {
         setTimeout(() => {
-          document.addEventListener('click', handlerFunction);
+          document.addEventListener("click", handlerFunction);
         }, 200);
       } else {
-        document.removeEventListener('click', handlerFunction);
+        document.removeEventListener("click", handlerFunction);
       }
-    },
+    }
   },
   data() {
     return {
       skillIsHovered: false,
       isDevelopped: false,
-      tempWidthOn: false,
+      tempWidthOn: false
     };
-  },
+  }
 };
 </script>
 
@@ -228,7 +265,7 @@ export default {
 }
 
 .skill-ctn {
-  color: theme('colors.custom-white');
+  color: theme("colors.custom-white");
   display: flex;
   flex-direction: row !important;
   justify-content: flex-end !important;
@@ -250,8 +287,7 @@ export default {
   }
 
   img {
-    filter: invert(46%) sepia(10%) saturate(2097%)
-    hue-rotate(135deg) brightness(94%) contrast(90%);
+    filter: invert(46%) sepia(10%) saturate(2097%) hue-rotate(135deg) brightness(94%) contrast(90%);
     height: 100px !important;
   }
 
@@ -263,7 +299,6 @@ export default {
     margin-right: 50px;
   }
 }
-
 
 .left-skill {
   flex-direction: row !important;
