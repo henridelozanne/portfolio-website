@@ -130,7 +130,7 @@ export default {
   },
   methods: {
     closeIconClicked() {
-      this.closeModalTL();
+      this.closeModalTimeLine();
       this.emitCloseDetail();
     },
     backgroundClicked(clickEvent) {
@@ -139,7 +139,7 @@ export default {
         this.emitCloseDetail();
       }
     },
-    closeModalTL() {
+    closeModalTimeLine() {
       const tl = gsap.timeline();
       if (window.innerWidth > 1279) {
         tl.to(".modal-content", { opacity: 0, duration: 0.5 });

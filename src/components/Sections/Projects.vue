@@ -54,6 +54,8 @@ export default {
             "Frontend development of a web-application in the education sector during a one year mission. Within a team with SCRUM methodology, I developped new features and solved bugs, implemented a new design system and integrated responsive designs.",
           team: true,
           stack: "Vue.js, JavaScript, Jest, Storybook, Sass",
+          feedback:
+            '"Henri a bien apporté à l\'équipe, avec laquelle il s\'est bien intégré. Sérieux, efficace, agréable, avec de bonnes compétences techniques, nous retravaillerons avec lui avec plaisir."',
           link: {
             display: "LPI's Projects website",
             href: "https://projects.directory/dashboard"

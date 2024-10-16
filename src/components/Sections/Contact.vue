@@ -156,7 +156,7 @@ export default {
         background: "#388186"
       });
     },
-    sendMail() {
+    async sendMail() {
       this.validateEmail();
       this.validateMessage();
       this.validateName();
@@ -168,7 +168,7 @@ export default {
           message: this.message,
           email: this.email
         };
-        emailjs
+        await emailjs
           .send(
             "default_service",
             "personnal_portfolio",
