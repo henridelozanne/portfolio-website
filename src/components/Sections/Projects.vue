@@ -47,6 +47,43 @@ export default {
   data() {
     return {
       projects: [
+      {
+          id: "LV",
+          name: "Louis Vuitton",
+          description:
+            "I worked on Louis Vuitton's e-commerce website as a Lead Frontend Developer during one year. I contributed to the SWITCH project, consisting of adapting the front to the new back-end. I also implemented the customer journey for a product exchange, and created new features on OOB context (Order On Behalf) for agents with special rights.",
+          team: true,
+          stack: "Nuxt.js, TypeScript, Jest, Storybook",
+          feedback:
+            'Henri is a highly skilled and dedicated Senior Front-End Developer with expertise in Vue.js, Nuxt, and TypeScript. He has a proven track record of success in the luxury industry, having served as a Squad Lead at Louis Vuitton. His strong technical skills, leadership abilities, and commitment to excellence make him a valuable asset to any team. Gustavo Pereira, Director of Expertise Frontend at Valtech',
+          link: {
+            display: "Louis Vuitton's website",
+            href: "https://fr.louisvuitton.com/fra-fr/homepage"
+          },
+          images: [
+            {
+              src:
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1729090528/Louis%20Vuitton/1-home.png",
+              alt: "home",
+              main: true
+            },
+            {
+              src:
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1729090529/Louis%20Vuitton/2-product.png",
+              alt: "product"
+            },
+            {
+              src:
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1729090528/Louis%20Vuitton/4-checkout.png",
+              alt: "checkout"
+            },
+            {
+              src:
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1729090528/Louis%20Vuitton/3-menu.png",
+              alt: "category"
+            }
+          ]
+        },
         {
           id: "lpi",
           name: "Learning Planet Institute",
