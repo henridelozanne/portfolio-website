@@ -152,6 +152,35 @@ export default {
           ]
         },
         {
+          id: "cap-ana",
+          name: "Cap-Ana",
+          description:
+            "I created this website from scratch, for French medical consulting firm Cap-Ana. Specializing in autism, Cap-Ana support parents and healthcare professionals in managing, educating, and living with autistic individuals. This website permits presenting their services and hosts Auticto, the pictogram bank adapted for autistic individuals",
+          stack: "Nuxt 2, Javascript and Sass",
+          link: {
+            display: "www.cap-ana.com",
+            href: "www.cap-ana.com"
+          },
+          images: [
+            {
+              src:
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1731340423/Cap-Ana%20main.png",
+              alt: "main",
+              main: true
+            },
+            {
+              src:
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1731340423/Cap-Ana%20Auticto.png",
+              alt: "auticto"
+            },
+            {
+              src:
+                "https://res.cloudinary.com/dcirj0x5j/image/upload/v1731340423/Cap-Ana%20Mobile.png",
+              alt: "mobile"
+            }
+          ]
+        },
+        {
           id: "xplo",
           name: "Xplo",
           description:

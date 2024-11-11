@@ -65,7 +65,7 @@ export default {
         {
           name: "Vue.js",
           description:
-            "Main tool for most of my projects. Knowledge of: Nuxt, VueX, Vue Router, Vue Devtools, Vuetify...",
+            "Main tool for most of my projects. Knowledge of: Vue/Nuxt version 2 and 3, VueX, Vue Router, Vue Devtools, Vuetify...",
           id: "vue",
           class: "left-skill",
           imgUrl: "vue-logo",
@@ -74,7 +74,7 @@ export default {
         {
           name: "JavaScript",
           description:
-            "Daily practice of JavaScript in ES6 notation. Taking care on writing clean and organized code.",
+            "Daily practice of JavaScript in ES6 notation and TypeScript. Taking care on writing clean and organized code.",
           id: "javascript",
           class: "right-skill",
           imgUrl: "javascript-logo",
